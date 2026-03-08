@@ -27,7 +27,7 @@
         .nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:var(--space-sm) 0;background:rgba(10,15,20,.7);backdrop-filter:blur(20px) saturate(1.5);-webkit-backdrop-filter:blur(20px) saturate(1.5);border-bottom:1px solid var(--color-border)}
         .nav-inner{max-width:var(--max-width);margin:0 auto;padding:0 var(--space-md);display:flex;align-items:center;justify-content:space-between}
         .nav-brand{display:flex;align-items:center}
-        .nav-brand img{height:38px;width:auto}
+        .nav-brand img{height:44px;width:auto}
         .nav-links{display:flex;gap:var(--space-md);align-items:center}
         .nav-links a{font-size:14px;color:var(--color-text-secondary);font-weight:400;transition:color .2s}
         .nav-links a:hover{color:var(--color-text);opacity:1}
@@ -104,7 +104,7 @@
         .cta-subtitle{font-size:18px;color:var(--color-text-secondary);margin-bottom:var(--space-lg);max-width:460px;margin-left:auto;margin-right:auto}
         .footer{padding:var(--space-lg) 0;border-top:1px solid var(--color-border)}
         .footer-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:var(--space-sm)}
-        .footer-brand img{height:32px;width:auto;opacity:.6}
+        .footer-brand img{height:36px;width:auto;opacity:.6}
         .footer-links{display:flex;gap:var(--space-md)}
         .footer-links a{font-size:13px;color:var(--color-text-tertiary)}
         .footer-links a:hover{color:var(--color-text-secondary)}
@@ -121,7 +121,7 @@
             .detail-row.reverse .detail-text{order:0}
             .pricing-grid{grid-template-columns:1fr;max-width:360px;margin:0 auto}
             .nav-links a:not(.nav-cta){display:none}
-            .nav-brand img{height:30px}
+            .nav-brand img{height:36px}
             .showcase-phone{flex:0 0 160px}
             .parallax-divider{height:260px}
         }
@@ -166,14 +166,14 @@
 
 <section class="stats-bar"><div class="container"><div class="stats-grid">
     <div class="reveal"><div class="stat-number">214</div><div class="stat-label">Wainwright fells</div></div>
-    <div class="reveal reveal-delay-1"><div class="stat-number">200+</div><div class="stat-label">Pre-loaded routes</div></div>
     <div class="reveal reveal-delay-2"><div class="stat-number">7</div><div class="stat-label">Book regions</div></div>
-    <div class="reveal reveal-delay-3"><div class="stat-number">54</div><div class="stat-label">Achievements to unlock</div></div>
+    <div class="reveal reveal-delay-1"><div class="stat-number">200+</div><div class="stat-label">Pre-loaded routes</div></div>
+    <div class="reveal reveal-delay-3"><div class="stat-number">50+</div><div class="stat-label">Achievements to unlock</div></div>
 </div></div></section>
 
 <section class="features" id="features"><div class="container">
     <div class="section-eyebrow reveal">Built for the fells</div>
-    <h2 class="section-title reveal reveal-delay-1">Everything you need from car park to summit</h2>
+    <h2 class="section-title reveal reveal-delay-1">Everything you need from home to summit. Just bring your boots and snacks!</h2>
     <div class="feature-grid">
         <div class="feature-card reveal"><div class="feature-icon">&#127956;</div><h3>Full Checklist</h3><p>All 214 Wainwrights with search, filtering by region, height, and difficulty. Track your progress with a satisfying completion ring.</p></div>
         <div class="feature-card reveal reveal-delay-1"><div class="feature-icon">&#129517;</div><h3>GPS Navigation</h3><p>Follow pre-loaded routes with live tracking, breadcrumb trails, off-route alerts, and Naismith's rule time estimates.</p></div>
@@ -195,7 +195,7 @@
 <section class="showcase" id="screenshots"><div class="container">
     <div class="showcase-header">
         <div class="section-eyebrow reveal">See it in action</div>
-        <h2 class="section-title reveal reveal-delay-1" style="margin-left:auto;margin-right:auto">Designed for walkers, not gadget lovers</h2>
+        <h2 class="section-title reveal reveal-delay-1" style="margin-left:auto;margin-right:auto">Designed for hikers, not gadget lovers</h2>
     </div>
     <div class="showcase-scroll">
         <div class="showcase-phone reveal"><img src="images/screen-checklist.png" alt="Checklist view"></div>
@@ -220,7 +220,7 @@
         <div class="detail-text">
             <span class="detail-tag pro">Pro Feature</span>
             <h3>Which fell this weekend?</h3>
-            <p>The app scores your remaining fells by weather, distance, daylight, and whether you can bag multiple summits in one walk. It tells you not just where to go, but when to start.</p>
+            <p>The app scores your remaining fells by weather, distance, daylight, and whether you can bag multiple summits in one walk. It tells you not just where is best to go, but when is best to start.</p>
         </div>
     </div>
     <div class="detail-row reveal">
@@ -228,7 +228,7 @@
         <div class="detail-text">
             <span class="detail-tag">Core Feature</span>
             <h3>Routes you can trust</h3>
-            <p>200+ pre-loaded walking routes covering all 214 fells. Live GPS tracking with four-tier off-route detection, elevation profiles, and battery-adaptive tracking that lasts the whole walk.</p>
+            <p>200+ pre-loaded walking routes covering all 214 fells. Live GPS tracking with off-route detection, re-routing, elevation profiles, and battery-adaptive tracking that lasts the whole hike.</p>
         </div>
     </div>
 </div></section>
@@ -246,7 +246,7 @@
             <ul class="pricing-features">
                 <li>Full 214-fell checklist</li>
                 <li>Progress ring and book grouping</li>
-                <li>Map with all fell pins</li>
+                <li>Interactive map with all fells</li>
                 <li>Manual completion logging</li>
                 <li>Nearby fell suggestions</li>
             </ul>
@@ -254,24 +254,26 @@
         <div class="pricing-card featured reveal reveal-delay-1">
             <div class="pricing-badge">Popular</div>
             <div class="pricing-tier">Companion+</div>
-            <div class="pricing-price">&pound;6.99</div>
+            <div class="pricing-price">&pound;10.95</div>
             <div class="pricing-period">one-off</div>
             <ul class="pricing-features">
                 <li>Everything in Free</li>
                 <li>Milestone achievements</li>
                 <li>Advanced stats dashboard</li>
                 <li>Photo gallery</li>
+                <li>Social feed</li>
                 <li>Shareable completion cards</li>
             </ul>
         </div>
         <div class="pricing-card reveal reveal-delay-2">
             <div class="pricing-tier">Companion Pro</div>
-            <div class="pricing-price">&pound;14.99</div>
+            <div class="pricing-price">&pound;14.95</div>
             <div class="pricing-period">per year</div>
             <ul class="pricing-features">
                 <li>Everything in Companion+</li>
                 <li>Summit-specific weather</li>
                 <li>GPS route navigation</li>
+                <li>Auto GPS-rerouting</li>
                 <li>Smart weekend recommendations</li>
                 <li>Automatic summit detection</li>
             </ul>
@@ -281,7 +283,7 @@
 
 <section class="cta-section" id="download"><div class="container"><div class="cta-content">
     <h2 class="cta-title reveal">The fells are waiting</h2>
-    <p class="cta-subtitle reveal reveal-delay-1">Less than 30p a week for summit weather, GPS navigation, and an intelligent companion that makes every walk better.</p>
+    <p class="cta-subtitle reveal reveal-delay-1">Less than 30p a week for summit weather forecasts, GPS navigation, and an intelligent companion that makes every walk better.</p>
     <div class="reveal reveal-delay-2"><a href="#" class="btn-primary" style="font-size:18px;padding:16px 36px">Download on the App Store</a></div>
 </div></div></section>
 
