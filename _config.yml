@@ -1,0 +1,5 @@
+title: The Wainwright Companion
+description: Track, navigate and complete all 214 Wainwright fells
+theme: minima
+plugins:
+  - jekyll-seo-tag
