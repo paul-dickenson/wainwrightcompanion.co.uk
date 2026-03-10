@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300..600&display=swap" rel="stylesheet">
     <style>
-        :root{--color-bg:#0a0f14;--color-bg-raised:#111920;--color-bg-card:#161f28;--color-surface:rgba(255,255,255,.04);--color-border:rgba(255,255,255,.07);--color-text:#e8ecf0;--color-text-secondary:rgba(255,255,255,.55);--color-text-tertiary:rgba(255,255,255,.3);--color-accent:#4ade80;--color-accent-dim:rgba(74,222,128,.12);--color-accent-glow:rgba(74,222,128,.25);--color-brand:#b85c3a;--color-brand-dim:rgba(184,92,58,.12);--font-display:'DM Serif Display',Georgia,serif;--font-body:'DM Sans',-apple-system,sans-serif;--space-xs:8px;--space-sm:16px;--space-md:24px;--space-lg:48px;--space-xl:80px;--space-2xl:120px;--radius-sm:12px;--radius-md:20px;--radius-lg:28px;--max-width:1080px}
+        :root{--color-bg:#0a0f14;--color-bg-raised:#111920;--color-bg-card:#161f28;--color-surface:rgba(255,255,255,.04);--color-border:rgba(255,255,255,.07);--color-text:#e8ecf0;--color-text-secondary:rgba(255,255,255,.55);--color-text-tertiary:rgba(255,255,255,.3);--color-accent:#4ade80;--color-accent-dim:rgba(74,222,128,.12);--color-accent-glow:rgba(74,222,128,.25);--color-brand:#b85c3a;--color-brand-dim:rgba(184,92,58,.12);--color-blue:#007AFF;--color-blue-dim:rgba(0,122,255,.12);--font-display:'DM Serif Display',Georgia,serif;--font-body:'DM Sans',-apple-system,sans-serif;--space-xs:8px;--space-sm:16px;--space-md:24px;--space-lg:48px;--space-xl:80px;--space-2xl:120px;--radius-sm:12px;--radius-md:20px;--radius-lg:28px;--max-width:1080px}
         *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
         html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
         body{background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);font-size:16px;line-height:1.6;overflow-x:hidden}
@@ -47,7 +47,7 @@
         .btn-secondary{display:inline-flex;align-items:center;gap:6px;padding:14px 24px;border-radius:var(--radius-sm);background:var(--color-surface);border:1px solid var(--color-border);color:var(--color-text-secondary);font-weight:500;font-size:15px}
         .btn-secondary:hover{border-color:rgba(255,255,255,.15);color:var(--color-text);opacity:1}
         .hero-phone{display:flex;justify-content:center}
-        .hero-phone img{max-height:580px;border-radius:var(--radius-lg);box-shadow:0 24px 80px rgba(0,0,0,.5),0 0 0 1px rgba(255,255,255,.05)}
+        .hero-phone img{max-height:580px}
         .stats-bar{border-top:1px solid var(--color-border);border-bottom:1px solid var(--color-border);padding:var(--space-lg) 0;background:var(--color-bg-raised)}
         .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-md);text-align:center}
         .stat-number{font-family:var(--font-display);font-size:36px;color:var(--color-accent);line-height:1;margin-bottom:4px}
@@ -58,7 +58,7 @@
         .feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-md)}
         .feature-card{background:var(--color-bg-card);border:1px solid var(--color-border);border-radius:var(--radius-md);padding:var(--space-md) var(--space-md) var(--space-lg);transition:border-color .3s,transform .3s}
         .feature-card:hover{border-color:rgba(255,255,255,.12);transform:translateY(-2px)}
-        .feature-icon{width:44px;height:44px;border-radius:12px;background:var(--color-accent-dim);display:flex;align-items:center;justify-content:center;margin-bottom:var(--space-sm);font-size:20px}
+        .feature-icon{width:44px;height:44px;border-radius:12px;background:var(--color-accent-dim);display:flex;align-items:center;justify-content:center;margin-bottom:var(--space-sm)}.feature-icon img{width:22px;height:22px;filter:brightness(0) invert(1);opacity:.9}
         .feature-card h3{font-family:var(--font-display);font-size:20px;margin-bottom:var(--space-xs);letter-spacing:-.2px}
         .feature-card p{font-size:14px;line-height:1.6;color:var(--color-text-secondary)}
         .parallax-divider{position:relative;height:340px;display:flex;align-items:center;justify-content:center;overflow:hidden}
@@ -70,28 +70,37 @@
         .showcase{padding:var(--space-2xl) 0;background:var(--color-bg-raised);border-top:1px solid var(--color-border);border-bottom:1px solid var(--color-border);overflow:hidden}
         .showcase-header{text-align:center;margin-bottom:var(--space-xl)}
         .showcase-scroll{display:flex;gap:var(--space-md);justify-content:center;flex-wrap:wrap}
-        .showcase-phone{flex:0 0 220px;border-radius:var(--radius-lg);overflow:hidden;box-shadow:0 16px 48px rgba(0,0,0,.4),0 0 0 1px rgba(255,255,255,.05);transition:transform .4s cubic-bezier(.16,1,.3,1)}
+        .showcase-phone{flex:0 0 185px;transition:transform .4s cubic-bezier(.16,1,.3,1)}
         .showcase-phone:hover{transform:translateY(-6px) scale(1.02)}
         .showcase-phone img{width:100%;height:auto;display:block}
-        .showcase-caption{text-align:center;margin-top:var(--space-lg);font-size:14px;color:var(--color-text-tertiary)}
-        .detail{padding:var(--space-2xl) 0}
+.detail{padding:var(--space-2xl) 0}
         .detail-row{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-xl);align-items:center;margin-bottom:var(--space-2xl)}
         .detail-row:last-child{margin-bottom:0}
         .detail-row.reverse .detail-image{order:2}
         .detail-row.reverse .detail-text{order:1}
-        .detail-image{border-radius:var(--radius-md);overflow:hidden;box-shadow:0 16px 48px rgba(0,0,0,.3)}
+        .detail-image{max-width:320px}
         .detail-image img{width:100%}
         .detail-text h3{font-family:var(--font-display);font-size:clamp(24px,3vw,32px);line-height:1.15;letter-spacing:-.3px;margin-bottom:var(--space-sm)}
         .detail-text p{font-size:16px;line-height:1.7;color:var(--color-text-secondary);margin-bottom:var(--space-md)}
-        .detail-tag{display:inline-block;padding:4px 12px;border-radius:999px;background:var(--color-accent-dim);color:var(--color-accent);font-size:12px;font-weight:600;letter-spacing:.5px;margin-bottom:var(--space-sm)}
+        .detail-tag{display:inline-block;padding:4px 12px;border-radius:999px;background:var(--color-blue-dim);color:var(--color-blue);font-size:12px;font-weight:600;letter-spacing:.5px;margin-bottom:var(--space-sm)}
+        .detail-tag.plus{background:var(--color-accent-dim);color:var(--color-accent)}
         .detail-tag.pro{background:var(--color-brand-dim);color:var(--color-brand)}
         .pricing{padding:var(--space-2xl) 0;background:var(--color-bg-raised);border-top:1px solid var(--color-border)}
         .pricing-header{text-align:center;margin-bottom:var(--space-xl)}
         .pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-md);max-width:900px;margin:0 auto}
-        .pricing-card{background:var(--color-bg-card);border:1px solid var(--color-border);border-radius:var(--radius-md);padding:var(--space-lg) var(--space-md);text-align:center;position:relative;transition:border-color .3s}
-        .pricing-card.featured{border-color:var(--color-accent);box-shadow:0 0 40px var(--color-accent-dim)}
-        .pricing-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);padding:4px 14px;border-radius:999px;background:var(--color-accent);color:#0a1a0a;font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase}
-        .pricing-tier{font-size:13px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--color-text-tertiary);margin-bottom:var(--space-sm)}
+        .pricing-card{background:var(--color-bg-card);border:1px solid var(--color-border);border-radius:var(--radius-md);padding:var(--space-lg) var(--space-md);text-align:center;position:relative;transition:border-color .3s,box-shadow .3s,transform .3s}
+        .pricing-card:hover{border-color:rgba(255,255,255,.15);transform:translateY(-2px)}
+        .pricing-card.free-tier:hover{border-color:var(--color-blue);box-shadow:0 0 40px var(--color-blue-dim)}
+        .pricing-card.featured{border-color:var(--color-accent);box-shadow:0 0 40px var(--color-accent-dim);transition:border-color .3s,box-shadow .3s,transform .3s}
+        .pricing-card.featured:hover{border-color:var(--color-accent);box-shadow:0 0 56px var(--color-accent-dim);transform:translateY(-3px)}
+        .pricing-grid:hover .pricing-card.featured:not(:hover){border-color:var(--color-border);box-shadow:none}
+        .pricing-card.pro-tier:hover{border-color:var(--color-brand);box-shadow:0 0 40px var(--color-brand-dim)}
+        .pricing-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);padding:4px 14px;border-radius:999px;background:var(--color-accent);color:#0a1a0a;font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;transition:opacity .3s,transform .3s}
+        .pricing-badge.badge-pro{background:var(--color-brand);color:#fff;opacity:0;transform:translateX(-50%) translateY(4px)}
+        .pricing-card.pro-tier:hover .pricing-badge.badge-pro{opacity:1;transform:translateX(-50%) translateY(0)}
+        .pricing-grid:hover .pricing-card.featured:not(:hover) .pricing-badge{opacity:0;transform:translateX(-50%) translateY(-4px)}
+        .pricing-subtitle{font-family:var(--font-display);font-size:15px;color:var(--color-text-secondary);margin-bottom:var(--space-md);font-style:italic}
+        .pricing-tier{font-size:13px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--color-text-tertiary);margin-bottom:var(--space-xs)}
         .pricing-price{font-family:var(--font-display);font-size:36px;color:var(--color-text);margin-bottom:4px}
         .pricing-period{font-size:14px;color:var(--color-text-tertiary);margin-bottom:var(--space-md)}
         .pricing-features{list-style:none;text-align:left;margin-bottom:var(--space-md)}
@@ -122,7 +131,7 @@
             .pricing-grid{grid-template-columns:1fr;max-width:360px;margin:0 auto}
             .nav-links a:not(.nav-cta){display:none}
             .nav-brand img{height:36px}
-            .showcase-phone{flex:0 0 160px}
+            .showcase-phone{flex:0 0 140px}
             .parallax-divider{height:260px}
         }
         @media(max-width:480px){
@@ -159,7 +168,7 @@
             </div>
         </div>
         <div class="hero-phone reveal reveal-delay-2">
-            <img src="images/hero-phone.jpg" alt="The Wainwright Companion app">
+            <img src="images/hero-phone.png" alt="The Wainwright Companion app">
         </div>
     </div>
 </section>
@@ -175,12 +184,12 @@
     <div class="section-eyebrow reveal">Built for the fells</div>
     <h2 class="section-title reveal reveal-delay-1">Everything you need from home to summit. Just bring your boots and snacks!</h2>
     <div class="feature-grid">
-        <div class="feature-card reveal"><div class="feature-icon">&#127956;</div><h3>Full Checklist</h3><p>All 214 Wainwrights with search, filtering by region, height, and difficulty. Track your progress with a satisfying completion ring.</p></div>
-        <div class="feature-card reveal reveal-delay-1"><div class="feature-icon">&#129517;</div><h3>GPS Navigation</h3><p>Follow pre-loaded routes with live tracking, breadcrumb trails, off-route alerts, and Naismith's rule time estimates.</p></div>
-        <div class="feature-card reveal reveal-delay-2"><div class="feature-icon">&#9925;</div><h3>Summit Weather</h3><p>Altitude-adjusted forecasts for every fell. Safety ratings at a glance &mdash; green, amber, or red conditions before you set off.</p></div>
-        <div class="feature-card reveal"><div class="feature-icon">&#128161;</div><h3>Smart Suggestions</h3><p>Recommendations based on weather, daylight, your location, and which fells you haven't yet bagged. Multi-summit walk groupings included.</p></div>
-        <div class="feature-card reveal reveal-delay-1"><div class="feature-icon">&#128202;</div><h3>Stats &amp; Achievements</h3><p>Pace projections, monthly charts, completion milestones, and 54 achievements. Shareable cards to celebrate every summit.</p></div>
-        <div class="feature-card reveal reveal-delay-2"><div class="feature-icon">&#9729;</div><h3>iCloud Sync</h3><p>Your progress syncs seamlessly across all your devices. Optional social features to share completions with fellow baggers.</p></div>
+        <div class="feature-card reveal"><div class="feature-icon"><img src="images/icons/mountain-snow.svg" alt=""></div><h3>Full Checklist</h3><p>All 214 Wainwrights with search, filtering by region, height, and difficulty. Track your progress with a satisfying completion ring.</p></div>
+        <div class="feature-card reveal reveal-delay-1"><div class="feature-icon"><img src="images/icons/compass.svg" alt=""></div><h3>GPS Navigation</h3><p>Follow pre-loaded routes with live tracking, breadcrumb trails, off-route alerts, and Naismith's rule time estimates.</p></div>
+        <div class="feature-card reveal reveal-delay-2"><div class="feature-icon"><img src="images/icons/cloud-sun.svg" alt=""></div><h3>Summit Weather</h3><p>Altitude-adjusted forecasts for every fell. Safety ratings at a glance &mdash; green, amber, or red conditions before you set off.</p></div>
+        <div class="feature-card reveal"><div class="feature-icon"><img src="images/icons/lightbulb.svg" alt=""></div><h3>Smart Suggestions</h3><p>Recommendations based on weather, daylight, your location, and which fells you haven't yet bagged. Multi-summit walk groupings included.</p></div>
+        <div class="feature-card reveal reveal-delay-1"><div class="feature-icon"><img src="images/icons/trophy.svg" alt=""></div><h3>Stats &amp; Achievements</h3><p>Pace projections, monthly charts, completion milestones, and 54 achievements. Shareable cards to celebrate every summit.</p></div>
+        <div class="feature-card reveal reveal-delay-2"><div class="feature-icon"><img src="images/icons/cloud-cog.svg" alt=""></div><h3>iCloud Sync</h3><p>Your progress syncs seamlessly across all your devices. Optional social features to share completions with fellow baggers.</p></div>
     </div>
 </div></section>
 
@@ -199,16 +208,16 @@
     </div>
     <div class="showcase-scroll">
         <div class="showcase-phone reveal"><img src="images/screen-checklist.png" alt="Checklist view"></div>
-        <div class="showcase-phone reveal reveal-delay-1"><img src="images/screen-map.jpg" alt="Map view"></div>
-        <div class="showcase-phone reveal reveal-delay-2"><img src="images/screen-weather.jpg" alt="Weather detail"></div>
-        <div class="showcase-phone reveal reveal-delay-3"><img src="images/screen-navigation.jpg" alt="Active navigation"></div>
+        <div class="showcase-phone reveal reveal-delay-1"><img src="images/screen-map.png" alt="Map view"></div>
+        <div class="showcase-phone reveal reveal-delay-2"><img src="images/screen-weather.png" alt="Weather detail"></div>
+        <div class="showcase-phone reveal reveal-delay-3"><img src="images/screen-navigation.png" alt="Active navigation"></div>
+        <div class="showcase-phone reveal reveal-delay-3"><img src="images/screen-achievement.png" alt="Profile and achievements"></div>
     </div>
-    <p class="showcase-caption reveal">Works offline on the fells. Comes alive when you're back in signal.</p>
 </div></section>
 
 <section class="detail"><div class="container">
     <div class="detail-row reveal">
-        <div class="detail-image"><img src="images/detail-weather.jpg" alt="Summit weather forecast"></div>
+        <div class="detail-image"><img src="images/detail-weather.png" alt="Summit weather forecast"></div>
         <div class="detail-text">
             <span class="detail-tag pro">Pro Feature</span>
             <h3>Weather that understands altitude</h3>
@@ -216,17 +225,33 @@
         </div>
     </div>
     <div class="detail-row reverse reveal">
-        <div class="detail-image"><img src="images/detail-suggestions.jpg" alt="Smart weekend suggestions"></div>
+        <div class="detail-image"><img src="images/detail-fell.png" alt="Fell detail view"></div>
+        <div class="detail-text">
+            <span class="detail-tag">Core Feature</span>
+            <h3>Know every fell</h3>
+            <p>Height, grid reference, region, weather conditions, an interactive map, and the best routes up &mdash; everything you need for each of the 214 Wainwrights, all in one place.</p>
+        </div>
+    </div>
+    <div class="detail-row reveal">
+        <div class="detail-image"><img src="images/detail-suggestions.png" alt="Smart weekend suggestions"></div>
         <div class="detail-text">
             <span class="detail-tag pro">Pro Feature</span>
             <h3>Which fell this weekend?</h3>
             <p>The app scores your remaining fells by weather, distance, daylight, and whether you can bag multiple summits in one walk. It tells you not just where is best to go, but when is best to start.</p>
         </div>
     </div>
-    <div class="detail-row reveal">
-        <div class="detail-image"><img src="images/detail-navigation.jpg" alt="GPS route navigation"></div>
+    <div class="detail-row reverse reveal">
+        <div class="detail-image"><img src="images/detail-achievement.png" alt="Achievements and milestones"></div>
         <div class="detail-text">
-            <span class="detail-tag">Core Feature</span>
+            <span class="detail-tag plus">Companion+</span>
+            <h3>Celebrate every milestone</h3>
+            <p>54 achievements across height milestones, cumulative ascent, regional completions, and more. Track your progress from your first Two Thousander to conquering every book.</p>
+        </div>
+    </div>
+    <div class="detail-row reveal">
+        <div class="detail-image"><img src="images/detail-navigation.png" alt="GPS route navigation"></div>
+        <div class="detail-text">
+            <span class="detail-tag pro">Pro Feature</span>
             <h3>Routes you can trust</h3>
             <p>200+ pre-loaded walking routes covering all 214 fells. Live GPS tracking with off-route detection, re-routing, elevation profiles, and battery-adaptive tracking that lasts the whole hike.</p>
         </div>
@@ -239,8 +264,9 @@
         <h2 class="section-title reveal reveal-delay-1" style="margin-left:auto;margin-right:auto">Start free. Upgrade when you're hooked.</h2>
     </div>
     <div class="pricing-grid">
-        <div class="pricing-card reveal">
+        <div class="pricing-card free-tier reveal">
             <div class="pricing-tier">Free</div>
+            <div class="pricing-subtitle">For everyone</div>
             <div class="pricing-price">&pound;0</div>
             <div class="pricing-period">forever</div>
             <ul class="pricing-features">
@@ -252,8 +278,9 @@
             </ul>
         </div>
         <div class="pricing-card featured reveal reveal-delay-1">
-            <div class="pricing-badge">Popular</div>
+            <div class="pricing-badge">Most Popular</div>
             <div class="pricing-tier">Companion+</div>
+            <div class="pricing-subtitle">For keen baggers</div>
             <div class="pricing-price">&pound;10.95</div>
             <div class="pricing-period">one-off</div>
             <ul class="pricing-features">
@@ -265,8 +292,10 @@
                 <li>Shareable completion cards</li>
             </ul>
         </div>
-        <div class="pricing-card reveal reveal-delay-2">
+        <div class="pricing-card pro-tier reveal reveal-delay-2">
+            <div class="pricing-badge badge-pro">Fully Loaded</div>
             <div class="pricing-tier">Companion Pro</div>
+            <div class="pricing-subtitle">For serious fellwalkers</div>
             <div class="pricing-price">&pound;14.95</div>
             <div class="pricing-period">per year</div>
             <ul class="pricing-features">
