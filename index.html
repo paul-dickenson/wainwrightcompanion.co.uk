@@ -12,8 +12,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300..600&display=swap" rel="stylesheet">
+    <link rel="preload" as="image" href="images/logo.png" fetchpriority="high">
+    <link rel="preload" as="image" href="images/hero.jpg">
+    <link rel="preload" as="image" href="images/hero-phone.png">
     <style>
-        :root{--color-bg:#0a0f14;--color-bg-raised:#111920;--color-bg-card:#161f28;--color-surface:rgba(255,255,255,.04);--color-border:rgba(255,255,255,.07);--color-text:#e8ecf0;--color-text-secondary:rgba(255,255,255,.55);--color-text-tertiary:rgba(255,255,255,.3);--color-accent:#4ade80;--color-accent-dim:rgba(74,222,128,.12);--color-accent-glow:rgba(74,222,128,.25);--color-brand:#b85c3a;--color-brand-dim:rgba(184,92,58,.12);--color-blue:#007AFF;--color-blue-dim:rgba(0,122,255,.12);--font-display:'DM Serif Display',Georgia,serif;--font-body:'DM Sans',-apple-system,sans-serif;--space-xs:8px;--space-sm:16px;--space-md:24px;--space-lg:48px;--space-xl:80px;--space-2xl:120px;--radius-sm:12px;--radius-md:20px;--radius-lg:28px;--max-width:1080px}
+        :root{--color-bg:#0a0f14;--color-bg-raised:#111920;--color-bg-card:#161f28;--color-surface:rgba(255,255,255,.04);--color-border:rgba(255,255,255,.07);--color-text:#e8ecf0;--color-text-secondary:rgba(255,255,255,.55);--color-text-tertiary:rgba(255,255,255,.5);--color-accent:#4ade80;--color-accent-dim:rgba(74,222,128,.12);--color-accent-glow:rgba(74,222,128,.25);--color-brand:#b85c3a;--color-brand-dim:rgba(184,92,58,.12);--color-blue:#317a8b;--color-blue-dim:rgba(49,122,139,.12);--font-display:'DM Serif Display',Georgia,serif;--font-body:'DM Sans',-apple-system,sans-serif;--space-xs:8px;--space-sm:16px;--space-md:24px;--space-lg:48px;--space-xl:80px;--space-2xl:120px;--radius-sm:12px;--radius-md:20px;--radius-lg:28px;--max-width:1080px}
         *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
         html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
         body{background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);font-size:16px;line-height:1.6;overflow-x:hidden}
@@ -51,7 +54,7 @@
         .stats-bar{border-top:1px solid var(--color-border);border-bottom:1px solid var(--color-border);padding:var(--space-lg) 0;background:var(--color-bg-raised)}
         .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-md);text-align:center}
         .stat-number{font-family:var(--font-display);font-size:36px;color:var(--color-accent);line-height:1;margin-bottom:4px}
-        .stat-label{font-size:13px;color:var(--color-text-tertiary);letter-spacing:.5px}
+        .stat-label{font-size:13px;color:var(--color-text-secondary);letter-spacing:.5px}
         .features{padding:var(--space-2xl) 0}
         .section-eyebrow{font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--color-accent);margin-bottom:var(--space-sm)}
         .section-title{font-family:var(--font-display);font-size:clamp(28px,3.5vw,40px);line-height:1.15;letter-spacing:-.5px;margin-bottom:var(--space-lg);max-width:520px}
@@ -82,7 +85,7 @@
         .detail-image img{width:100%}
         .detail-text h3{font-family:var(--font-display);font-size:clamp(24px,3vw,32px);line-height:1.15;letter-spacing:-.3px;margin-bottom:var(--space-sm)}
         .detail-text p{font-size:16px;line-height:1.7;color:var(--color-text-secondary);margin-bottom:var(--space-md)}
-        .detail-tag{display:inline-block;padding:4px 12px;border-radius:999px;background:var(--color-blue-dim);color:var(--color-blue);font-size:12px;font-weight:600;letter-spacing:.5px;margin-bottom:var(--space-sm)}
+        .detail-tag{display:inline-block;padding:4px 12px;border-radius:999px;background:var(--color-blue-dim);color:var(--color-blue);font-size:12px;font-weight:600;letter-spacing:.5px;margin-bottom:var(--space-sm);box-shadow:0 0 0 1px rgba(255,255,255,.08),0 2px 10px rgba(255,255,255,.06)}
         .detail-tag.plus{background:var(--color-accent-dim);color:var(--color-accent)}
         .detail-tag.pro{background:var(--color-brand-dim);color:var(--color-brand)}
         .pricing{padding:var(--space-2xl) 0;background:var(--color-bg-raised);border-top:1px solid var(--color-border)}
@@ -115,8 +118,8 @@
         .footer-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:var(--space-sm)}
         .footer-brand img{height:36px;width:auto;opacity:.6}
         .footer-links{display:flex;gap:var(--space-md)}
-        .footer-links a{font-size:13px;color:var(--color-text-tertiary)}
-        .footer-links a:hover{color:var(--color-text-secondary)}
+        .footer-links a{font-size:13px;color:var(--color-text-secondary)}
+        .footer-links a:hover{color:var(--color-text)}
         @media(max-width:900px){
             .hero-content{grid-template-columns:1fr;text-align:center;padding-top:140px}
             .hero-text{max-width:100%}
@@ -125,7 +128,8 @@
             .hero-phone img{max-height:420px;margin:0 auto}
             .stats-grid{grid-template-columns:repeat(2,1fr)}
             .feature-grid{grid-template-columns:1fr;max-width:400px;margin:0 auto}
-            .detail-row{grid-template-columns:1fr;gap:var(--space-lg)}
+            .detail-row{grid-template-columns:1fr;gap:var(--space-lg);text-align:center}
+            .detail-image{margin:0 auto}
             .detail-row.reverse .detail-image{order:0}
             .detail-row.reverse .detail-text{order:0}
             .pricing-grid{grid-template-columns:1fr;max-width:360px;margin:0 auto}
@@ -146,7 +150,7 @@
 <body>
 
 <nav class="nav"><div class="nav-inner">
-    <a href="/" class="nav-brand"><img src="images/logo.png" alt="Wainwrights Companion"></a>
+    <a href="/" class="nav-brand"><picture><source srcset="images/logo.webp" type="image/webp"><img src="images/logo.png" alt="Wainwrights Companion" fetchpriority="high"></picture></a>
     <div class="nav-links">
         <a href="#features">Features</a>
         <a href="#screenshots">Screenshots</a>
@@ -168,7 +172,7 @@
             </div>
         </div>
         <div class="hero-phone reveal reveal-delay-2">
-            <img src="images/hero-phone.png" alt="The Wainwright Companion app">
+            <picture><source srcset="images/hero-phone.webp" type="image/webp"><img src="images/hero-phone.png" alt="The Wainwright Companion app"></picture>
         </div>
     </div>
 </section>
@@ -184,12 +188,12 @@
     <div class="section-eyebrow reveal">Built for the fells</div>
     <h2 class="section-title reveal reveal-delay-1">Everything you need from home to summit. Just bring your boots and snacks!</h2>
     <div class="feature-grid">
-        <div class="feature-card reveal"><div class="feature-icon"><img src="images/icons/mountain-snow.svg" alt=""></div><h3>Full Checklist</h3><p>All 214 Wainwrights with search, filtering by region, height, and difficulty. Track your progress with a satisfying completion ring.</p></div>
-        <div class="feature-card reveal reveal-delay-1"><div class="feature-icon"><img src="images/icons/compass.svg" alt=""></div><h3>GPS Navigation</h3><p>Follow pre-loaded routes with live tracking, breadcrumb trails, off-route alerts, and Naismith's rule time estimates.</p></div>
-        <div class="feature-card reveal reveal-delay-2"><div class="feature-icon"><img src="images/icons/cloud-sun.svg" alt=""></div><h3>Summit Weather</h3><p>Altitude-adjusted forecasts for every fell. Safety ratings at a glance &mdash; green, amber, or red conditions before you set off.</p></div>
-        <div class="feature-card reveal"><div class="feature-icon"><img src="images/icons/lightbulb.svg" alt=""></div><h3>Smart Suggestions</h3><p>Recommendations based on weather, daylight, your location, and which fells you haven't yet bagged. Multi-summit walk groupings included.</p></div>
-        <div class="feature-card reveal reveal-delay-1"><div class="feature-icon"><img src="images/icons/trophy.svg" alt=""></div><h3>Stats &amp; Achievements</h3><p>Pace projections, monthly charts, completion milestones, and 54 achievements. Shareable cards to celebrate every summit.</p></div>
-        <div class="feature-card reveal reveal-delay-2"><div class="feature-icon"><img src="images/icons/cloud-cog.svg" alt=""></div><h3>iCloud Sync</h3><p>Your progress syncs seamlessly across all your devices. Optional social features to share completions with fellow baggers.</p></div>
+        <div class="feature-card reveal"><div class="feature-icon"><img src="images/icons/mountain-snow.svg" alt="" loading="lazy"></div><h3>Full Checklist</h3><p>All 214 Wainwrights with search, filtering by region, height, and difficulty. Track your progress with a satisfying completion ring.</p></div>
+        <div class="feature-card reveal reveal-delay-1"><div class="feature-icon"><img src="images/icons/compass.svg" alt="" loading="lazy"></div><h3>GPS Navigation</h3><p>Follow pre-loaded routes with live tracking, breadcrumb trails, off-route alerts, and Naismith's rule time estimates.</p></div>
+        <div class="feature-card reveal reveal-delay-2"><div class="feature-icon"><img src="images/icons/cloud-sun.svg" alt="" loading="lazy"></div><h3>Summit Weather</h3><p>Altitude-adjusted forecasts for every fell. Safety ratings at a glance &mdash; green, amber, or red conditions before you set off.</p></div>
+        <div class="feature-card reveal"><div class="feature-icon"><img src="images/icons/lightbulb.svg" alt="" loading="lazy"></div><h3>Smart Suggestions</h3><p>Recommendations based on weather, daylight, your location, and which fells you haven't yet bagged. Multi-summit walk groupings included.</p></div>
+        <div class="feature-card reveal reveal-delay-1"><div class="feature-icon"><img src="images/icons/trophy.svg" alt="" loading="lazy"></div><h3>Stats &amp; Achievements</h3><p>Pace projections, monthly charts, completion milestones, and 54 achievements. Shareable cards to celebrate every summit.</p></div>
+        <div class="feature-card reveal reveal-delay-2"><div class="feature-icon"><img src="images/icons/cloud-cog.svg" alt="" loading="lazy"></div><h3>iCloud Sync</h3><p>Your progress syncs seamlessly across all your devices. Optional social features to share completions with fellow baggers.</p></div>
     </div>
 </div></section>
 
@@ -204,36 +208,36 @@
 <section class="showcase" id="screenshots"><div class="container">
     <div class="showcase-header">
         <div class="section-eyebrow reveal">See it in action</div>
-        <h2 class="section-title reveal reveal-delay-1" style="margin-left:auto;margin-right:auto">Designed for hikers, not gadget lovers</h2>
+        <h2 class="section-title reveal reveal-delay-1" style="margin-left:auto;margin-right:auto">Designed and developed<br>in The Lakes</h2>
     </div>
     <div class="showcase-scroll">
-        <div class="showcase-phone reveal"><img src="images/screen-checklist.png" alt="Checklist view"></div>
-        <div class="showcase-phone reveal reveal-delay-1"><img src="images/screen-map.png" alt="Map view"></div>
-        <div class="showcase-phone reveal reveal-delay-2"><img src="images/screen-weather.png" alt="Weather detail"></div>
-        <div class="showcase-phone reveal reveal-delay-3"><img src="images/screen-navigation.png" alt="Active navigation"></div>
-        <div class="showcase-phone reveal reveal-delay-3"><img src="images/screen-achievement.png" alt="Profile and achievements"></div>
+        <div class="showcase-phone reveal"><picture><source srcset="images/screen-checklist.webp" type="image/webp"><img src="images/screen-checklist.png" alt="Checklist view" loading="lazy"></picture></div>
+        <div class="showcase-phone reveal reveal-delay-1"><picture><source srcset="images/screen-map.webp" type="image/webp"><img src="images/screen-map.png" alt="Map view" loading="lazy"></picture></div>
+        <div class="showcase-phone reveal reveal-delay-2"><picture><source srcset="images/screen-weather.webp" type="image/webp"><img src="images/screen-weather.png" alt="Weather detail" loading="lazy"></picture></div>
+        <div class="showcase-phone reveal reveal-delay-3"><picture><source srcset="images/screen-navigation.webp" type="image/webp"><img src="images/screen-navigation.png" alt="Active navigation" loading="lazy"></picture></div>
+        <div class="showcase-phone reveal reveal-delay-3"><picture><source srcset="images/screen-achievement.webp" type="image/webp"><img src="images/screen-achievement.png" alt="Profile and achievements" loading="lazy"></picture></div>
     </div>
 </div></section>
 
 <section class="detail"><div class="container">
     <div class="detail-row reveal">
-        <div class="detail-image"><img src="images/detail-weather.png" alt="Summit weather forecast"></div>
+        <div class="detail-image"><picture><source srcset="images/detail-weather.webp" type="image/webp"><img src="images/detail-weather.png" alt="Summit weather forecast" loading="lazy"></picture></div>
         <div class="detail-text">
             <span class="detail-tag pro">Pro Feature</span>
             <h3>Weather that understands altitude</h3>
-            <p>Valley forecasts aren't summit forecasts. Every fell gets its own altitude-adjusted prediction &mdash; temperature, wind, visibility, and a simple safety rating so you know before you go.</p>
+            <p>Valley forecasts aren't summit forecasts. Every fell gets its own altitude-adjusted prediction; temperature, wind, visibility, and a simple safety rating so you know before you go.</p>
         </div>
     </div>
     <div class="detail-row reverse reveal">
-        <div class="detail-image"><img src="images/detail-fell.png" alt="Fell detail view"></div>
+        <div class="detail-image"><picture><source srcset="images/detail-fell.webp" type="image/webp"><img src="images/detail-fell.png" alt="Fell detail view" loading="lazy"></picture></div>
         <div class="detail-text">
             <span class="detail-tag">Core Feature</span>
             <h3>Know every fell</h3>
-            <p>Height, grid reference, region, weather conditions, an interactive map, and the best routes up &mdash; everything you need for each of the 214 Wainwrights, all in one place.</p>
+            <p>Height, grid reference, region, weather conditions, an interactive map, and the best routes up. Everything you need for each of the 214 Wainwrights, all in one place.</p>
         </div>
     </div>
     <div class="detail-row reveal">
-        <div class="detail-image"><img src="images/detail-suggestions.png" alt="Smart weekend suggestions"></div>
+        <div class="detail-image"><picture><source srcset="images/detail-suggestions.webp" type="image/webp"><img src="images/detail-suggestions.png" alt="Smart weekend suggestions" loading="lazy"></picture></div>
         <div class="detail-text">
             <span class="detail-tag pro">Pro Feature</span>
             <h3>Which fell this weekend?</h3>
@@ -241,7 +245,7 @@
         </div>
     </div>
     <div class="detail-row reverse reveal">
-        <div class="detail-image"><img src="images/detail-achievement.png" alt="Achievements and milestones"></div>
+        <div class="detail-image"><picture><source srcset="images/detail-achievement.webp" type="image/webp"><img src="images/detail-achievement.png" alt="Achievements and milestones" loading="lazy"></picture></div>
         <div class="detail-text">
             <span class="detail-tag plus">Companion+</span>
             <h3>Celebrate every milestone</h3>
@@ -249,7 +253,7 @@
         </div>
     </div>
     <div class="detail-row reveal">
-        <div class="detail-image"><img src="images/detail-navigation.png" alt="GPS route navigation"></div>
+        <div class="detail-image"><picture><source srcset="images/detail-navigation.webp" type="image/webp"><img src="images/detail-navigation.png" alt="GPS route navigation" loading="lazy"></picture></div>
         <div class="detail-text">
             <span class="detail-tag pro">Pro Feature</span>
             <h3>Routes you can trust</h3>
@@ -261,7 +265,7 @@
 <section class="pricing" id="pricing"><div class="container">
     <div class="pricing-header">
         <div class="section-eyebrow reveal">Simple pricing</div>
-        <h2 class="section-title reveal reveal-delay-1" style="margin-left:auto;margin-right:auto">Start free. Upgrade when you're hooked.</h2>
+        <h2 class="section-title reveal reveal-delay-1" style="margin-left:auto;margin-right:auto">Start free.<br>Upgrade when you're hooked.</h2>
     </div>
     <div class="pricing-grid">
         <div class="pricing-card free-tier reveal">
@@ -317,7 +321,7 @@
 </div></div></section>
 
 <footer class="footer"><div class="container"><div class="footer-inner">
-    <div class="footer-brand"><img src="images/logo.png" alt="Wainwrights Companion"></div>
+    <div class="footer-brand"><picture><source srcset="images/logo.webp" type="image/webp"><img src="images/logo.png" alt="Wainwrights Companion" loading="lazy"></picture></div>
     <div class="footer-links">
         <a href="/privacy/">Privacy Policy</a>
         <a href="/terms/">Terms of Service</a>
