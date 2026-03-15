@@ -11,10 +11,11 @@
     <meta property="og:type" content="website">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300..600&display=swap" rel="stylesheet">
-    <link rel="preload" as="image" href="images/Wainwright%20Companion%20Logo%20in%20Morning%20Light.png" fetchpriority="high">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300..600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300..600&display=swap" rel="stylesheet"></noscript>
+    <link rel="preload" as="image" href="images/Wainwright%20Companion%20Logo%20in%20Morning%20Light.webp" type="image/webp" fetchpriority="high">
     <link rel="preload" as="image" href="images/hero.jpg">
-    <link rel="preload" as="image" href="images/hero-phone.png">
+    <link rel="preload" as="image" href="images/hero-phone-640w.webp" type="image/webp" imagesrcset="images/hero-phone-640w.webp 640w, images/hero-phone.webp 1530w" imagesizes="(max-width:900px) 212px, 292px">
     <style>
         :root{--color-bg:#0a0f14;--color-bg-raised:#111920;--color-bg-card:#161f28;--color-surface:rgba(255,255,255,.04);--color-border:rgba(255,255,255,.07);--color-text:#e8ecf0;--color-text-secondary:rgba(255,255,255,.55);--color-text-tertiary:rgba(255,255,255,.5);--color-accent:#4ade80;--color-accent-dim:rgba(74,222,128,.12);--color-accent-glow:rgba(74,222,128,.25);--color-brand:#4ade80;--color-brand-dim:rgba(74,222,128,.12);--color-plus:#f7de32;--color-plus-dim:rgba(247,222,50,.12);--color-blue:#4fc8dc;--color-blue-dim:rgba(79,200,220,.12);--font-display:'DM Serif Display',Georgia,serif;--font-body:'DM Sans',-apple-system,sans-serif;--space-xs:8px;--space-sm:16px;--space-md:24px;--space-lg:48px;--space-xl:80px;--space-2xl:120px;--radius-sm:12px;--radius-md:20px;--radius-lg:28px;--max-width:1080px}
         *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -172,7 +173,7 @@
             </div>
         </div>
         <div class="hero-phone reveal reveal-delay-2">
-            <picture><source srcset="images/hero-phone.webp" type="image/webp"><img src="images/hero-phone.png" alt="The Wainwright Companion app"></picture>
+            <picture><source srcset="images/hero-phone-640w.webp 640w, images/hero-phone.webp 1530w" sizes="(max-width:900px) 212px, 292px" type="image/webp"><img src="images/hero-phone.png" alt="The Wainwright Companion app"></picture>
         </div>
     </div>
 </section>
@@ -211,17 +212,17 @@
         <h2 class="section-title reveal reveal-delay-1" style="margin-left:auto;margin-right:auto">Designed and developed<br>in The Lakes</h2>
     </div>
     <div class="showcase-scroll">
-        <div class="showcase-phone reveal"><picture><source srcset="images/screen-checklist.webp" type="image/webp"><img src="images/screen-checklist.png" alt="Checklist view" loading="lazy"></picture></div>
-        <div class="showcase-phone reveal reveal-delay-1"><picture><source srcset="images/screen-map.webp" type="image/webp"><img src="images/screen-map.png" alt="Map view" loading="lazy"></picture></div>
-        <div class="showcase-phone reveal reveal-delay-2"><picture><source srcset="images/screen-weather.webp" type="image/webp"><img src="images/screen-weather.png" alt="Weather detail" loading="lazy"></picture></div>
-        <div class="showcase-phone reveal reveal-delay-3"><picture><source srcset="images/screen-navigation.webp" type="image/webp"><img src="images/screen-navigation.png" alt="Active navigation" loading="lazy"></picture></div>
-        <div class="showcase-phone reveal reveal-delay-3"><picture><source srcset="images/screen-achievement.webp" type="image/webp"><img src="images/screen-achievement.png" alt="Profile and achievements" loading="lazy"></picture></div>
+        <div class="showcase-phone reveal"><picture><source srcset="images/screen-checklist-600w.webp 600w, images/screen-checklist.webp 1530w" sizes="(max-width:900px) 140px, 185px" type="image/webp"><img src="images/screen-checklist.png" alt="Checklist view" loading="lazy"></picture></div>
+        <div class="showcase-phone reveal reveal-delay-1"><picture><source srcset="images/screen-map-600w.webp 600w, images/screen-map.webp 1530w" sizes="(max-width:900px) 140px, 185px" type="image/webp"><img src="images/screen-map.png" alt="Map view" loading="lazy"></picture></div>
+        <div class="showcase-phone reveal reveal-delay-2"><picture><source srcset="images/screen-weather-600w.webp 600w, images/screen-weather.webp 1530w" sizes="(max-width:900px) 140px, 185px" type="image/webp"><img src="images/screen-weather.png" alt="Weather detail" loading="lazy"></picture></div>
+        <div class="showcase-phone reveal reveal-delay-3"><picture><source srcset="images/screen-navigation-600w.webp 600w, images/screen-navigation.webp 1530w" sizes="(max-width:900px) 140px, 185px" type="image/webp"><img src="images/screen-navigation.png" alt="Active navigation" loading="lazy"></picture></div>
+        <div class="showcase-phone reveal reveal-delay-3"><picture><source srcset="images/screen-achievement-600w.webp 600w, images/screen-achievement.webp 1530w" sizes="(max-width:900px) 140px, 185px" type="image/webp"><img src="images/screen-achievement.png" alt="Profile and achievements" loading="lazy"></picture></div>
     </div>
 </div></section>
 
 <section class="detail"><div class="container">
     <div class="detail-row reveal">
-        <div class="detail-image"><picture><source srcset="images/detail-weather.webp" type="image/webp"><img src="images/detail-weather.png" alt="Summit weather forecast" loading="lazy"></picture></div>
+        <div class="detail-image"><picture><source srcset="images/detail-weather-960w.webp 960w, images/detail-weather.webp 1530w" sizes="320px" type="image/webp"><img src="images/detail-weather.png" alt="Summit weather forecast" loading="lazy"></picture></div>
         <div class="detail-text">
             <span class="detail-tag pro">Pro Feature</span>
             <h3>Weather that understands altitude</h3>
@@ -229,7 +230,7 @@
         </div>
     </div>
     <div class="detail-row reverse reveal">
-        <div class="detail-image"><picture><source srcset="images/detail-fell.webp" type="image/webp"><img src="images/detail-fell.png" alt="Fell detail view" loading="lazy"></picture></div>
+        <div class="detail-image"><picture><source srcset="images/detail-fell-960w.webp 960w, images/detail-fell.webp 1530w" sizes="320px" type="image/webp"><img src="images/detail-fell.png" alt="Fell detail view" loading="lazy"></picture></div>
         <div class="detail-text">
             <span class="detail-tag">Core Feature</span>
             <h3>Know every fell</h3>
@@ -237,7 +238,7 @@
         </div>
     </div>
     <div class="detail-row reveal">
-        <div class="detail-image"><picture><source srcset="images/detail-suggestions.webp" type="image/webp"><img src="images/detail-suggestions.png" alt="Smart weekend suggestions" loading="lazy"></picture></div>
+        <div class="detail-image"><picture><source srcset="images/detail-suggestions-960w.webp 960w, images/detail-suggestions.webp 1530w" sizes="320px" type="image/webp"><img src="images/detail-suggestions.png" alt="Smart weekend suggestions" loading="lazy"></picture></div>
         <div class="detail-text">
             <span class="detail-tag pro">Pro Feature</span>
             <h3>Which fell this weekend?</h3>
@@ -245,7 +246,7 @@
         </div>
     </div>
     <div class="detail-row reverse reveal">
-        <div class="detail-image"><picture><source srcset="images/detail-achievement.webp" type="image/webp"><img src="images/detail-achievement.png" alt="Achievements and milestones" loading="lazy"></picture></div>
+        <div class="detail-image"><picture><source srcset="images/detail-achievement-960w.webp 960w, images/detail-achievement.webp 1530w" sizes="320px" type="image/webp"><img src="images/detail-achievement.png" alt="Achievements and milestones" loading="lazy"></picture></div>
         <div class="detail-text">
             <span class="detail-tag plus">Companion+</span>
             <h3>Celebrate every milestone</h3>
@@ -253,7 +254,7 @@
         </div>
     </div>
     <div class="detail-row reveal">
-        <div class="detail-image"><picture><source srcset="images/detail-navigation.webp" type="image/webp"><img src="images/detail-navigation.png" alt="GPS route navigation" loading="lazy"></picture></div>
+        <div class="detail-image"><picture><source srcset="images/detail-navigation-960w.webp 960w, images/detail-navigation.webp 1530w" sizes="320px" type="image/webp"><img src="images/detail-navigation.png" alt="GPS route navigation" loading="lazy"></picture></div>
         <div class="detail-text">
             <span class="detail-tag pro">Pro Feature</span>
             <h3>Routes you can trust</h3>
