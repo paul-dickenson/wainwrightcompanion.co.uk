@@ -12,11 +12,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300..600&display=swap" rel="stylesheet">
-    <link rel="preload" as="image" href="images/logo.png" fetchpriority="high">
+    <link rel="preload" as="image" href="images/Wainwright%20Companion%20Logo%20in%20Morning%20Light.png" fetchpriority="high">
     <link rel="preload" as="image" href="images/hero.jpg">
     <link rel="preload" as="image" href="images/hero-phone.png">
     <style>
-        :root{--color-bg:#0a0f14;--color-bg-raised:#111920;--color-bg-card:#161f28;--color-surface:rgba(255,255,255,.04);--color-border:rgba(255,255,255,.07);--color-text:#e8ecf0;--color-text-secondary:rgba(255,255,255,.55);--color-text-tertiary:rgba(255,255,255,.5);--color-accent:#4ade80;--color-accent-dim:rgba(74,222,128,.12);--color-accent-glow:rgba(74,222,128,.25);--color-brand:#b85c3a;--color-brand-dim:rgba(184,92,58,.12);--color-blue:#317a8b;--color-blue-dim:rgba(49,122,139,.12);--font-display:'DM Serif Display',Georgia,serif;--font-body:'DM Sans',-apple-system,sans-serif;--space-xs:8px;--space-sm:16px;--space-md:24px;--space-lg:48px;--space-xl:80px;--space-2xl:120px;--radius-sm:12px;--radius-md:20px;--radius-lg:28px;--max-width:1080px}
+        :root{--color-bg:#0a0f14;--color-bg-raised:#111920;--color-bg-card:#161f28;--color-surface:rgba(255,255,255,.04);--color-border:rgba(255,255,255,.07);--color-text:#e8ecf0;--color-text-secondary:rgba(255,255,255,.55);--color-text-tertiary:rgba(255,255,255,.5);--color-accent:#4ade80;--color-accent-dim:rgba(74,222,128,.12);--color-accent-glow:rgba(74,222,128,.25);--color-brand:#4ade80;--color-brand-dim:rgba(74,222,128,.12);--color-plus:#f7de32;--color-plus-dim:rgba(247,222,50,.12);--color-blue:#4fc8dc;--color-blue-dim:rgba(79,200,220,.12);--font-display:'DM Serif Display',Georgia,serif;--font-body:'DM Sans',-apple-system,sans-serif;--space-xs:8px;--space-sm:16px;--space-md:24px;--space-lg:48px;--space-xl:80px;--space-2xl:120px;--radius-sm:12px;--radius-md:20px;--radius-lg:28px;--max-width:1080px}
         *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
         html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
         body{background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);font-size:16px;line-height:1.6;overflow-x:hidden}
@@ -86,7 +86,7 @@
         .detail-text h3{font-family:var(--font-display);font-size:clamp(24px,3vw,32px);line-height:1.15;letter-spacing:-.3px;margin-bottom:var(--space-sm)}
         .detail-text p{font-size:16px;line-height:1.7;color:var(--color-text-secondary);margin-bottom:var(--space-md)}
         .detail-tag{display:inline-block;padding:4px 12px;border-radius:999px;background:var(--color-blue-dim);color:var(--color-blue);font-size:12px;font-weight:600;letter-spacing:.5px;margin-bottom:var(--space-sm);box-shadow:0 0 0 1px rgba(255,255,255,.08),0 2px 10px rgba(255,255,255,.06)}
-        .detail-tag.plus{background:var(--color-accent-dim);color:var(--color-accent)}
+        .detail-tag.plus{background:var(--color-plus-dim);color:var(--color-plus)}
         .detail-tag.pro{background:var(--color-brand-dim);color:var(--color-brand)}
         .pricing{padding:var(--space-2xl) 0;background:var(--color-bg-raised);border-top:1px solid var(--color-border)}
         .pricing-header{text-align:center;margin-bottom:var(--space-xl)}
@@ -94,12 +94,12 @@
         .pricing-card{background:var(--color-bg-card);border:1px solid var(--color-border);border-radius:var(--radius-md);padding:var(--space-lg) var(--space-md);text-align:center;position:relative;transition:border-color .3s,box-shadow .3s,transform .3s}
         .pricing-card:hover{border-color:rgba(255,255,255,.15);transform:translateY(-2px)}
         .pricing-card.free-tier:hover{border-color:var(--color-blue);box-shadow:0 0 40px var(--color-blue-dim)}
-        .pricing-card.featured{border-color:var(--color-accent);box-shadow:0 0 40px var(--color-accent-dim);transition:border-color .3s,box-shadow .3s,transform .3s}
-        .pricing-card.featured:hover{border-color:var(--color-accent);box-shadow:0 0 56px var(--color-accent-dim);transform:translateY(-3px)}
+        .pricing-card.featured{border-color:var(--color-plus);box-shadow:0 0 40px var(--color-plus-dim);transition:border-color .3s,box-shadow .3s,transform .3s}
+        .pricing-card.featured:hover{border-color:var(--color-plus);box-shadow:0 0 56px var(--color-plus-dim);transform:translateY(-3px)}
         .pricing-grid:hover .pricing-card.featured:not(:hover){border-color:var(--color-border);box-shadow:none}
         .pricing-card.pro-tier:hover{border-color:var(--color-brand);box-shadow:0 0 40px var(--color-brand-dim)}
-        .pricing-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);padding:4px 14px;border-radius:999px;background:var(--color-accent);color:#0a1a0a;font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;transition:opacity .3s,transform .3s}
-        .pricing-badge.badge-pro{background:var(--color-brand);color:#fff;opacity:0;transform:translateX(-50%) translateY(4px)}
+        .pricing-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);padding:4px 14px;border-radius:999px;background:var(--color-plus);color:#0a1a0a;font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;transition:opacity .3s,transform .3s}
+        .pricing-badge.badge-pro{background:var(--color-brand);color:#0a1a0a;opacity:0;transform:translateX(-50%) translateY(4px)}
         .pricing-card.pro-tier:hover .pricing-badge.badge-pro{opacity:1;transform:translateX(-50%) translateY(0)}
         .pricing-grid:hover .pricing-card.featured:not(:hover) .pricing-badge{opacity:0;transform:translateX(-50%) translateY(-4px)}
         .pricing-subtitle{font-family:var(--font-display);font-size:15px;color:var(--color-text-secondary);margin-bottom:var(--space-md);font-style:italic}
@@ -150,7 +150,7 @@
 <body>
 
 <nav class="nav"><div class="nav-inner">
-    <a href="/" class="nav-brand"><picture><source srcset="images/logo.webp" type="image/webp"><img src="images/logo.png" alt="Wainwrights Companion" fetchpriority="high"></picture></a>
+    <a href="/" class="nav-brand"><picture><source srcset="images/Wainwright%20Companion%20Logo%20in%20Morning%20Light.webp" type="image/webp"><img src="images/Wainwright%20Companion%20Logo%20in%20Morning%20Light.png" alt="Wainwright Companion" fetchpriority="high"></picture></a>
     <div class="nav-links">
         <a href="#features">Features</a>
         <a href="#screenshots">Screenshots</a>
@@ -321,7 +321,7 @@
 </div></div></section>
 
 <footer class="footer"><div class="container"><div class="footer-inner">
-    <div class="footer-brand"><picture><source srcset="images/logo.webp" type="image/webp"><img src="images/logo.png" alt="Wainwrights Companion" loading="lazy"></picture></div>
+    <div class="footer-brand"><picture><source srcset="images/Wainwright%20Companion%20Logo%20in%20Morning%20Light.webp" type="image/webp"><img src="images/Wainwright%20Companion%20Logo%20in%20Morning%20Light.png" alt="Wainwright Companion" loading="lazy"></picture></div>
     <div class="footer-links">
         <a href="/privacy/">Privacy Policy</a>
         <a href="/terms/">Terms of Service</a>
