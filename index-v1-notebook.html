@@ -6,169 +6,137 @@
     <title>The Wainwright Companion — Track, Navigate and Complete All 214 Fells</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Space+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <style>
-        :root{
-            --bg:#f6f2e8;
-            --bg-alt:#ede8d6;
-            --text:#1c1c1c;
-            --muted:#5a5050;
-            --os-red:#c0332b;
-            --os-blue:#1a5c8a;
-            --os-green:#3a6e3a;
-            --os-brown:#8b6028;
-            --os-yellow:#f0c060;
-            --grid:rgba(26,92,138,.07);
-            --rule:rgba(28,28,28,.18);
-            --max-width:1080px;
+        :root {
+            --bg: #f5f0e6;
+            --bg-alt: #ede8dc;
+            --ink: #2a1a10;
+            --ink-muted: #7a6a55;
+            --ink-faint: rgba(42,26,16,.12);
+            --red: #8b3520;
+            --green: #3d6b4a;
+            --rule: rgba(42,26,16,.2);
+            --max-width: 1080px;
         }
         *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
         html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
-        body{
-            background-color:var(--bg);
-            background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
-            background-size:60px 60px;
-            color:var(--text);
-            font-family:'Source Serif 4',Georgia,serif;
-            font-size:16px;
-            line-height:1.7;
-            overflow-x:hidden;
-        }
+        body{background:var(--bg);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.75;overflow-x:hidden}
+        body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.35;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");background-size:200px}
         img{max-width:100%;height:auto;display:block}
-        a{color:var(--os-red);text-decoration:none}
+        a{color:var(--red);text-decoration:none}
         a:hover{text-decoration:underline}
         .container{max-width:var(--max-width);margin:0 auto;padding:0 32px}
 
-        /* NAV — wayfinding sign */
-        .nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--text);border-bottom:3px solid var(--os-red)}
-        .nav-inner{max-width:var(--max-width);margin:0 auto;padding:0 32px;height:56px;display:flex;align-items:center;justify-content:space-between}
-        .nav-brand{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:18px;letter-spacing:2px;text-transform:uppercase;color:#fff}
-        .nav-brand em{font-style:normal;color:var(--os-yellow)}
+        /* NAV */
+        .nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(245,240,230,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--rule)}
+        .nav-inner{max-width:var(--max-width);margin:0 auto;padding:14px 32px;display:flex;align-items:center;justify-content:space-between}
+        .nav-brand img{height:44px;width:auto}
         .nav-links{display:flex;gap:32px;align-items:center}
-        .nav-links a{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.6)}
-        .nav-links a:hover{color:#fff;text-decoration:none}
-        .nav-cta{color:var(--os-yellow)!important;border:1px solid rgba(240,192,96,.35);padding:5px 16px}
-        .nav-cta:hover{background:rgba(240,192,96,.1)}
-
-        /* Coordinate badge */
-        .coord{display:inline-block;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:1px;color:var(--os-blue);background:rgba(26,92,138,.08);border:1px solid rgba(26,92,138,.2);padding:4px 12px}
+        .nav-links a{font-size:13px;color:var(--ink-muted);letter-spacing:.5px}
+        .nav-links a:hover{color:var(--ink);text-decoration:none}
+        .nav-cta{padding:7px 20px;border:1px solid var(--red);color:var(--red)!important;font-size:12px;letter-spacing:1px;text-transform:uppercase}
+        .nav-cta:hover{background:var(--red);color:var(--bg)!important;text-decoration:none}
 
         /* HERO */
-        .hero{position:relative;min-height:100vh;display:flex;align-items:flex-end;overflow:hidden;padding-top:56px}
-        .hero-bg{position:absolute;inset:0;background:url('images/hero.jpg') center 30%/cover no-repeat}
-        .hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(246,242,232,.08) 0%,rgba(246,242,232,.2) 35%,rgba(246,242,232,.72) 60%,rgba(246,242,232,.97) 78%,var(--bg) 100%)}
-        .hero-content{position:relative;z-index:2;max-width:var(--max-width);margin:0 auto;padding:60px 32px 100px;width:100%}
-        .hero-coord{margin-bottom:24px}
-        .hero-layout{display:flex;align-items:flex-end;gap:60px}
-        .hero-text{flex:1;max-width:580px}
-        .hero-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(56px,9vw,120px);font-weight:800;text-transform:uppercase;line-height:.88;letter-spacing:-1px;color:var(--text);margin-bottom:32px}
-        .hero-title em{font-style:normal;color:var(--os-red)}
-        .hero-subtitle{font-size:17px;line-height:1.75;color:var(--muted);margin-bottom:36px;max-width:460px}
-        .hero-actions{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
-        .btn-primary{display:inline-flex;align-items:center;gap:8px;padding:13px 28px;background:var(--os-red);color:#fff;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:15px;letter-spacing:1.5px;text-transform:uppercase;transition:background .2s;border-radius:1px}
-        .btn-primary:hover{background:#a02020;text-decoration:none;color:#fff}
-        .btn-secondary{font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--rule);padding-bottom:2px}
-        .btn-secondary:hover{color:var(--text);text-decoration:none}
-        .hero-phone{flex-shrink:0}
-        .hero-phone img{max-height:460px}
+        .hero{padding-top:100px;min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden}
+        .hero-bg{position:absolute;inset:0;background:url('images/hero.jpg') center 30%/cover no-repeat;opacity:.1;filter:sepia(70%)}
+        .hero-content{position:relative;z-index:1;max-width:var(--max-width);margin:0 auto;padding:80px 32px;display:grid;grid-template-columns:1.1fr 1fr;gap:80px;align-items:center}
+        .hero-eyebrow{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--ink-muted);margin-bottom:20px}
+        .hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(44px,5.5vw,76px);font-weight:300;font-style:italic;line-height:1.05;letter-spacing:-1px;color:var(--ink);margin-bottom:28px}
+        .hero-subtitle{font-size:16px;line-height:1.85;color:var(--ink-muted);margin-bottom:40px;max-width:460px}
+        .hero-actions{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+        .btn-primary{display:inline-flex;align-items:center;gap:8px;padding:13px 28px;background:var(--ink);color:var(--bg);font-family:'Libre Baskerville',serif;font-size:14px;letter-spacing:.5px;border:1px solid var(--ink);transition:all .25s}
+        .btn-primary:hover{background:var(--red);border-color:var(--red);text-decoration:none;color:var(--bg)}
+        .btn-secondary{font-size:13px;color:var(--ink-muted);letter-spacing:.5px;border-bottom:1px solid var(--rule);padding-bottom:2px}
+        .btn-secondary:hover{color:var(--red);border-color:var(--red);text-decoration:none}
+        .hero-phone{display:flex;justify-content:center;align-items:center}
+        .hero-phone img{max-height:540px;filter:sepia(8%) brightness(.97)}
 
-        /* STATS — map legend strip */
-        .stats-bar{background:var(--text);padding:28px 0}
+        /* STATS */
+        .stats-bar{border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:44px 0;background:var(--bg-alt);position:relative}
         .stats-inner{max-width:var(--max-width);margin:0 auto;padding:0 32px;display:flex;justify-content:space-between;align-items:center}
-        .stat-entry{display:flex;align-items:center;gap:14px}
-        .stat-swatch{width:36px;height:36px;border-radius:2px;flex-shrink:0}
-        .stat-swatch.r{background:var(--os-red)}
-        .stat-swatch.b{background:var(--os-blue)}
-        .stat-swatch.g{background:var(--os-green)}
-        .stat-swatch.w{background:var(--os-brown)}
-        .stat-number{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:26px;color:#fff;line-height:1}
-        .stat-label{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.5)}
+        .stat-item{text-align:center}
+        .stat-rule{width:1px;height:44px;background:var(--rule)}
+        .stat-number{font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:400;line-height:1;color:var(--ink);margin-bottom:6px}
+        .stat-label{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-muted)}
 
-        /* FEATURES — map legend cards */
+        /* FEATURES */
         .features{padding:120px 0}
-        .section-eyebrow{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--os-red);margin-bottom:16px}
-        .section-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:clamp(36px,5vw,64px);text-transform:uppercase;line-height:.92;color:var(--text);letter-spacing:-.5px;margin-bottom:60px;max-width:600px}
-        .feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--rule);border:1px solid var(--rule)}
-        .feature-card{background:var(--bg);padding:36px 28px;position:relative}
-        .feature-top-bar{height:3px;position:absolute;top:0;left:0;right:0}
-        .fc1 .feature-top-bar,.fc5 .feature-top-bar{background:var(--os-red)}
-        .fc2 .feature-top-bar,.fc6 .feature-top-bar{background:var(--os-blue)}
-        .fc3 .feature-top-bar{background:var(--os-green)}
-        .fc4 .feature-top-bar{background:var(--os-brown)}
-        .feature-symbol{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px}
-        .fc1 .feature-symbol,.fc5 .feature-symbol{color:var(--os-red)}
-        .fc2 .feature-symbol,.fc6 .feature-symbol{color:var(--os-blue)}
-        .fc3 .feature-symbol{color:var(--os-green)}
-        .fc4 .feature-symbol{color:var(--os-brown)}
-        .feature-card h3{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:22px;text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px;color:var(--text)}
-        .feature-card p{font-size:14px;color:var(--muted);line-height:1.75}
-
-        /* TIER BADGES */
-        .tier-badge{position:absolute;top:14px;right:16px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;padding:3px 9px;border-radius:1px}
-        .tier-badge.free{color:var(--os-green);border:1px solid rgba(58,110,58,.3);background:rgba(58,110,58,.08)}
-        .tier-badge.plus{color:var(--os-brown);border:1px solid rgba(139,96,40,.3);background:rgba(139,96,40,.08)}
-        .tier-badge.pro{color:var(--os-red);border:1px solid rgba(192,51,43,.3);background:rgba(192,51,43,.08)}
+        .section-eyebrow{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--red);margin-bottom:16px}
+        .section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,4vw,50px);font-weight:400;font-style:italic;line-height:1.18;letter-spacing:-.5px;color:var(--ink);max-width:560px;margin-bottom:64px}
+        .feature-list{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border-top:1px solid var(--rule)}
+        .feature-item{padding:40px 40px 40px 0;border-bottom:1px solid var(--rule);display:grid;grid-template-columns:52px 1fr;gap:16px}
+        .feature-item:nth-child(even){padding-left:40px;border-left:1px solid var(--rule)}
+        .feature-number{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:300;color:var(--ink-muted);line-height:1.2;padding-top:2px}
+        .feature-content h3{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:500;line-height:1.2;margin-bottom:10px;color:var(--ink)}
+        .feature-content p{font-size:14px;line-height:1.8;color:var(--ink-muted)}
 
         /* QUOTE */
-        .quote-section{padding:80px 0;background:var(--text);text-align:center}
-        .quote-text{font-family:'Source Serif 4',serif;font-size:clamp(18px,2.5vw,28px);font-style:italic;color:rgba(255,255,255,.85);max-width:600px;margin:0 auto 16px;line-height:1.5}
-        .quote-attr{font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--os-yellow)}
+        .quote-section{padding:100px 0;text-align:center;background:var(--bg-alt);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);position:relative;overflow:hidden}
+        .quote-section::before{content:'\201C';position:absolute;font-family:'Cormorant Garamond',serif;font-size:480px;font-weight:300;color:var(--ink-faint);top:-120px;left:50%;transform:translateX(-50%);line-height:1;pointer-events:none}
+        .quote-text{position:relative;font-family:'Cormorant Garamond',serif;font-size:clamp(22px,3vw,36px);font-weight:400;font-style:italic;line-height:1.4;color:var(--ink);max-width:620px;margin:0 auto 20px}
+        .quote-attr{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--ink-muted)}
 
         /* PRICING */
-        .pricing{padding:120px 0}
+        .pricing{padding:120px 0;background:var(--bg-alt);border-top:1px solid var(--rule)}
         .pricing-header{margin-bottom:64px}
-        .pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:960px;margin:0 auto}
-        .pricing-card{background:#fff;border:1px solid var(--rule);padding:40px 32px;position:relative;transition:border-color .3s,box-shadow .3s,transform .3s}
-        .pricing-card:hover{border-color:rgba(28,28,28,.35);transform:translateY(-2px)}
-        .pricing-card.free-tier:hover{border-color:var(--os-blue);box-shadow:0 0 40px rgba(26,92,138,.12)}
-        .pricing-card.featured{border-color:var(--os-red);border-width:2px;box-shadow:0 0 40px rgba(192,51,43,.1);transition:border-color .3s,box-shadow .3s,transform .3s}
-        .pricing-card.featured:hover{border-color:var(--os-red);box-shadow:0 0 56px rgba(192,51,43,.18);transform:translateY(-3px)}
-        .pricing-grid:hover .pricing-card.featured:not(:hover){border-color:var(--rule);box-shadow:none}
-        .pricing-card.pro-tier:hover{border-color:var(--os-green);box-shadow:0 0 40px rgba(58,110,58,.12)}
-        .pricing-badge{position:absolute;top:-14px;left:24px;background:var(--os-red);color:#fff;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:2px;text-transform:uppercase;padding:4px 14px;transition:opacity .3s,transform .3s}
-        .pricing-badge.badge-pro{background:var(--os-green);opacity:0;transform:translateY(4px)}
-        .pricing-card.pro-tier:hover .pricing-badge.badge-pro{opacity:1;transform:translateY(0)}
-        .pricing-grid:hover .pricing-card.featured:not(:hover) .pricing-badge{opacity:0;transform:translateY(-4px)}
-        .pricing-tier{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
-        .pricing-price{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:60px;color:var(--text);line-height:1;margin-bottom:4px}
-        .pricing-period{font-family:'Source Serif 4',serif;font-size:13px;color:var(--muted);font-style:italic;margin-bottom:28px}
-        .pricing-divider{height:2px;background:var(--bg-alt);margin-bottom:24px}
-        .pricing-card.featured .pricing-divider{background:var(--os-red);opacity:.25}
+        .pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--rule)}
+        .pricing-card{padding:48px 36px;border-right:1px solid var(--rule)}
+        .pricing-card:last-child{border-right:none}
+        .pricing-card.featured{background:var(--ink);color:var(--bg)}
+        .pricing-badge{display:inline-block;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--red);border:1px solid var(--red);padding:3px 10px;margin-bottom:20px}
+        .pricing-card.featured .pricing-badge{color:#f0c080;border-color:#f0c080}
+        .pricing-tier{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--ink-muted);margin-bottom:8px}
+        .pricing-card.featured .pricing-tier{color:rgba(245,240,230,.55)}
+        .pricing-subtitle{font-family:'Cormorant Garamond',serif;font-size:16px;font-style:italic;color:var(--ink-muted);margin-bottom:20px}
+        .pricing-card.featured .pricing-subtitle{color:rgba(245,240,230,.6)}
+        .pricing-price{font-family:'Cormorant Garamond',serif;font-size:56px;font-weight:300;line-height:1;color:var(--ink);margin-bottom:4px}
+        .pricing-card.featured .pricing-price{color:var(--bg)}
+        .pricing-period{font-size:12px;color:var(--ink-muted);margin-bottom:32px;letter-spacing:.5px}
+        .pricing-card.featured .pricing-period{color:rgba(245,240,230,.5)}
         .pricing-features{list-style:none}
-        .pricing-features li{font-size:14px;color:var(--muted);padding:7px 0 7px 22px;position:relative}
-        .pricing-features li::before{content:'✓';position:absolute;left:0;color:var(--os-green);font-weight:700;font-size:12px}
+        .pricing-features li{font-size:14px;color:var(--ink-muted);padding:8px 0 8px 22px;position:relative;border-top:1px solid var(--rule)}
+        .pricing-card.featured .pricing-features li{color:rgba(245,240,230,.7);border-color:rgba(245,240,230,.12)}
+        .pricing-features li::before{content:'✓';position:absolute;left:0;color:var(--green);font-weight:700;font-size:12px}
+        .pricing-card.featured .pricing-features li::before{color:rgba(160,210,160,.8)}
 
         /* CTA */
-        .cta-section{padding:100px 32px;text-align:center;background:var(--bg-alt);border-top:1px solid var(--rule);position:relative;overflow:hidden}
-        .cta-section::after{content:'NY 280 097';position:absolute;bottom:24px;right:32px;font-family:'Space Mono',monospace;font-size:11px;color:rgba(28,28,28,.12);letter-spacing:1px;pointer-events:none}
-        .cta-section::before{content:'';position:absolute;inset:0;background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:60px 60px}
+        .cta-section{padding:120px 0;text-align:center;position:relative;overflow:hidden}
+        .cta-section::before{content:'';position:absolute;inset:0;background:url('images/hero.jpg') center 70%/cover no-repeat;opacity:.07;filter:sepia(60%)}
         .cta-content{position:relative;z-index:1}
-        .cta-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:clamp(48px,8vw,108px);text-transform:uppercase;line-height:.88;color:var(--text);margin-bottom:32px;letter-spacing:-1px}
-        .cta-title em{font-style:normal;color:var(--os-red)}
-        .cta-subtitle{font-size:17px;color:var(--muted);margin-bottom:48px;max-width:480px;margin-left:auto;margin-right:auto;line-height:1.75}
+        .cta-rule{width:60px;height:1px;background:var(--rule);margin:0 auto 40px}
+        .cta-title{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,5vw,68px);font-weight:300;font-style:italic;line-height:1.1;letter-spacing:-1px;color:var(--ink);margin-bottom:20px}
+        .cta-subtitle{font-size:15px;color:var(--ink-muted);margin-bottom:48px;max-width:480px;margin-left:auto;margin-right:auto;line-height:1.85}
 
         /* FOOTER */
-        .footer{padding:32px 0;background:var(--text)}
+        .footer{padding:40px 0;border-top:1px solid var(--rule);background:var(--bg-alt)}
         .footer-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
-        .footer-brand{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:16px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.45)}
-        .footer-links{display:flex;gap:24px}
-        .footer-links a{font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.4)}
-        .footer-links a:hover{color:#fff;text-decoration:none}
+        .footer-brand img{height:32px;opacity:.45;filter:sepia(40%)}
+        .footer-links{display:flex;gap:32px}
+        .footer-links a{font-size:12px;color:var(--ink-muted);letter-spacing:.5px}
+        .footer-links a:hover{color:var(--ink);text-decoration:none}
 
-        .reveal{opacity:0;transform:translateY(16px);transition:opacity .8s ease,transform .8s ease}
+        .reveal{opacity:0;transform:translateY(20px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)}
         .reveal.visible{opacity:1;transform:translateY(0)}
         .reveal-delay-1{transition-delay:.1s}.reveal-delay-2{transition-delay:.2s}.reveal-delay-3{transition-delay:.3s}
 
         @media(max-width:900px){
-            .hero-layout{flex-direction:column;gap:32px}
-            .hero-phone{display:none}
-            .feature-grid{grid-template-columns:1fr}
-            .pricing-grid{grid-template-columns:1fr;max-width:400px}
-            .stats-inner{flex-wrap:wrap;justify-content:center;gap:20px}
+            .hero-content{grid-template-columns:1fr;gap:40px;padding-top:100px;text-align:center}
+            .hero-subtitle,.hero-actions{margin-left:auto;margin-right:auto}
+            .hero-actions{justify-content:center}
+            .hero-phone img{max-height:380px;margin:0 auto}
+            .feature-list{grid-template-columns:1fr}
+            .feature-item:nth-child(even){padding-left:0;border-left:none}
+            .pricing-grid{grid-template-columns:1fr}
+            .pricing-card{border-right:none;border-bottom:1px solid var(--rule)}
+            .pricing-card:last-child{border-bottom:none}
+            .stats-inner{flex-wrap:wrap;justify-content:center;gap:24px}
+            .stat-rule{display:none}
             .nav-links a:not(.nav-cta){display:none}
         }
         /* SHOWCASE */
-        .showcase{padding:100px 0;background:#fff;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+        .showcase{padding:100px 0;background:var(--bg-alt);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
         .showcase-header{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px;margin-bottom:48px}
         .carousel-wrapper{position:relative}
         .showcase-scroll{display:flex;gap:24px;overflow-x:scroll;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;-ms-overflow-style:none;padding-bottom:4px;cursor:grab;-webkit-mask-image:linear-gradient(to right,transparent,#000 64px,#000 calc(100% - 64px),transparent);mask-image:linear-gradient(to right,transparent,#000 64px,#000 calc(100% - 64px),transparent)}
@@ -177,17 +145,17 @@
         .showcase-phone{flex:0 0 180px;scroll-snap-align:start;transition:transform .4s cubic-bezier(.16,1,.3,1)}
         .showcase-phone:hover{transform:translateY(-4px)}
         .showcase-phone img{width:100%;height:auto;display:block}
-        .showcase-caption{margin-top:10px;font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--muted);text-align:center}
-        .carousel-btn{position:absolute;top:45%;transform:translateY(-50%);background:#fff;border:1px solid var(--rule);color:var(--text);width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:20px;line-height:1;display:flex;align-items:center;justify-content:center;z-index:2;transition:all .2s;padding:0}
-        .carousel-btn:hover{background:var(--os-red);color:#fff;border-color:var(--os-red)}
+        .showcase-caption{margin-top:10px;font-size:12px;color:var(--ink-muted);text-align:center;letter-spacing:.3px}
+        .carousel-btn{position:absolute;top:45%;transform:translateY(-50%);background:var(--bg-alt);border:1px solid var(--rule);color:var(--ink);width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:20px;line-height:1;display:flex;align-items:center;justify-content:center;z-index:2;transition:all .2s;padding:0}
+        .carousel-btn:hover{background:var(--ink);color:var(--bg)}
         .carousel-prev{left:6px}.carousel-next{right:6px}
         .carousel-dots{display:flex;gap:8px;justify-content:center;margin-top:28px}
         .carousel-dot{width:5px;height:5px;border-radius:50%;background:var(--rule);border:none;padding:0;cursor:pointer;transition:all .3s}
-        .carousel-dot.active{background:var(--os-red);transform:scale(1.4)}
+        .carousel-dot.active{background:var(--ink);transform:scale(1.4)}
         .showcase-mode-toggle{display:flex;gap:4px}
-        .mode-btn{padding:5px 14px;border:1px solid var(--rule);background:transparent;color:var(--muted);font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;cursor:pointer;transition:all .2s}
-        .mode-btn:hover{color:var(--text)}
-        .mode-btn.active{background:var(--bg-alt);color:var(--text)}
+        .mode-btn{padding:5px 14px;border:1px solid var(--rule);background:transparent;color:var(--ink-muted);font-size:12px;cursor:pointer;transition:all .2s;font-family:'Libre Baskerville',serif;letter-spacing:.5px}
+        .mode-btn:hover{color:var(--ink)}
+        .mode-btn.active{background:var(--bg);color:var(--ink)}
         .showcase-img{transition:opacity .22s ease}
         @media(max-width:640px){.showcase-phone{flex:0 0 140px}}
     </style>
@@ -195,48 +163,52 @@
 <body>
 
 <nav class="nav"><div class="nav-inner">
-    <div class="nav-brand">The <em>Wainwright</em> Companion</div>
+    <a href="/" class="nav-brand"><picture><source srcset="images/Wainwright%20Companion%20Logo%20in%20Morning%20Light.webp" type="image/webp"><img src="images/Wainwright%20Companion%20Logo%20in%20Morning%20Light.png" alt="Wainwright Companion"></picture></a>
     <div class="nav-links">
         <a href="#features">Features</a>
         <a href="#pricing">Pricing</a>
-        <a href="#download" class="nav-cta">App Store &nearr;</a>
+        <a href="#download" class="nav-cta">App Store</a>
     </div>
 </div></nav>
 
 <section class="hero">
     <div class="hero-bg"></div>
     <div class="hero-content">
-        <div class="hero-coord reveal"><span class="coord">NY 280 097 &middot; The Lake District &middot; 214 Wainwright Fells</span></div>
-        <div class="hero-layout">
-            <div class="hero-text">
-                <h1 class="hero-title reveal reveal-delay-1">Your<br>companion<br>for every<br><em>summit</em></h1>
-                <p class="hero-subtitle reveal reveal-delay-2">Navigate the Lake District&rsquo;s 214 Wainwright fells with GPS tracking, summit weather forecasts, and intelligent recommendations for your next walk.</p>
-                <div class="hero-actions reveal reveal-delay-3">
-                    <a href="#download" class="btn-primary">Download Free</a>
-                    <a href="#screenshots" class="btn-secondary">See it in action</a>
-                </div>
+        <div class="hero-text">
+            <div class="hero-eyebrow reveal">214 Wainwright Fells &middot; The Lake District</div>
+            <h1 class="hero-title reveal reveal-delay-1">Your companion<br>for every summit</h1>
+            <p class="hero-subtitle reveal reveal-delay-2">Navigate the Lake District's 214 Wainwright fells with GPS tracking, summit weather forecasts, and intelligent recommendations for your next walk.</p>
+            <div class="hero-actions reveal reveal-delay-3">
+                <a href="#download" class="btn-primary">Download Free</a>
+                <a href="#screenshots" class="btn-secondary">See it in action</a>
             </div>
+        </div>
+        <div class="hero-phone reveal reveal-delay-2">
+            <picture><source srcset="images/screen-hero-600w.webp" type="image/webp"><img src="images/screen-hero.png" alt="The Wainwright Companion app"></picture>
         </div>
     </div>
 </section>
 
 <div class="stats-bar"><div class="stats-inner">
-    <div class="stat-entry reveal"><div class="stat-swatch r"></div><div><div class="stat-number">214</div><div class="stat-label">Wainwright Fells</div></div></div>
-    <div class="stat-entry reveal reveal-delay-1"><div class="stat-swatch b"></div><div><div class="stat-number">7</div><div class="stat-label">Book Regions</div></div></div>
-    <div class="stat-entry reveal reveal-delay-1"><div class="stat-swatch g"></div><div><div class="stat-number">200+</div><div class="stat-label">Pre-loaded Routes</div></div></div>
-    <div class="stat-entry reveal reveal-delay-2"><div class="stat-swatch w"></div><div><div class="stat-number">54</div><div class="stat-label">Achievements</div></div></div>
+    <div class="stat-item reveal"><div class="stat-number">214</div><div class="stat-label">Wainwright Fells</div></div>
+    <div class="stat-rule"></div>
+    <div class="stat-item reveal reveal-delay-1"><div class="stat-number">7</div><div class="stat-label">Book Regions</div></div>
+    <div class="stat-rule"></div>
+    <div class="stat-item reveal reveal-delay-2"><div class="stat-number">200+</div><div class="stat-label">Pre-loaded Routes</div></div>
+    <div class="stat-rule"></div>
+    <div class="stat-item reveal reveal-delay-3"><div class="stat-number">54</div><div class="stat-label">Achievements</div></div>
 </div></div>
 
 <section class="features" id="features"><div class="container">
-    <div class="section-eyebrow reveal">Map Key &mdash; Features</div>
-    <h2 class="section-title reveal reveal-delay-1">Everything you<br>need on the fell</h2>
-    <div class="feature-grid reveal">
-        <div class="feature-card fc1"><div class="feature-top-bar"></div><span class="tier-badge free">Free</span><div class="feature-symbol">&#9632; Track</div><h3>Full Checklist</h3><p>All 214 Wainwrights with search, filtering by region, height, and difficulty. Progress ring and book grouping.</p></div>
-        <div class="feature-card fc2"><div class="feature-top-bar"></div><span class="tier-badge pro">Pro</span><div class="feature-symbol">&#9675; Navigate</div><h3>GPS Navigation</h3><p>Pre-loaded routes with live tracking, breadcrumb trails, off-route alerts, and Naismith&rsquo;s rule time estimates.</p></div>
-        <div class="feature-card fc3"><div class="feature-top-bar"></div><span class="tier-badge pro">Pro</span><div class="feature-symbol">&#9670; Forecast</div><h3>Summit Weather</h3><p>Altitude-adjusted forecasts for every fell. Green, amber, or red safety ratings before you set off.</p></div>
-        <div class="feature-card fc4"><div class="feature-top-bar"></div><span class="tier-badge pro">Pro</span><div class="feature-symbol">&#9654; Plan</div><h3>Smart Suggestions</h3><p>Scored by weather, daylight, distance, and which fells you haven&rsquo;t bagged yet. Multi-summit groupings included.</p></div>
-        <div class="feature-card fc5"><div class="feature-top-bar"></div><span class="tier-badge plus">Companion+</span><div class="feature-symbol">&#9733; Achieve</div><h3>Stats &amp; Achievements</h3><p>Monthly charts, completion milestones, and 54 achievements. Shareable cards for every summit.</p></div>
-        <div class="feature-card fc6"><div class="feature-top-bar"></div><span class="tier-badge free">Free</span><div class="feature-symbol">&#8644; Sync</div><h3>iCloud Sync</h3><p>Your progress syncs seamlessly across all your devices. Optional social features for fellow baggers.</p></div>
+    <div class="section-eyebrow reveal">Built for the fells</div>
+    <h2 class="section-title reveal reveal-delay-1">Everything you need, from home to summit</h2>
+    <div class="feature-list">
+        <div class="feature-item reveal"><div class="feature-number">01</div><div class="feature-content"><h3>Full Checklist</h3><p>All 214 Wainwrights with search, filtering by region, height, and difficulty. Track your progress with a satisfying completion ring.</p></div></div>
+        <div class="feature-item reveal reveal-delay-1"><div class="feature-number">02</div><div class="feature-content"><h3>GPS Navigation</h3><p>Follow pre-loaded routes with live tracking, breadcrumb trails, off-route alerts, and Naismith's rule time estimates.</p></div></div>
+        <div class="feature-item reveal"><div class="feature-number">03</div><div class="feature-content"><h3>Summit Weather</h3><p>Altitude-adjusted forecasts for every fell. Green, amber, or red safety ratings before you set off.</p></div></div>
+        <div class="feature-item reveal reveal-delay-1"><div class="feature-number">04</div><div class="feature-content"><h3>Smart Suggestions</h3><p>Scored by weather, daylight, distance, and which fells you haven't yet bagged. Multi-summit groupings included.</p></div></div>
+        <div class="feature-item reveal"><div class="feature-number">05</div><div class="feature-content"><h3>Stats &amp; Achievements</h3><p>Monthly charts, completion milestones, and 54 achievements. Shareable summit cards for every top.</p></div></div>
+        <div class="feature-item reveal reveal-delay-1"><div class="feature-number">06</div><div class="feature-content"><h3>iCloud Sync</h3><p>Your progress syncs seamlessly across all your devices. Optional social features for fellow baggers.</p></div></div>
     </div>
 </div></section>
 
@@ -254,8 +226,8 @@
             <h2 class="section-title reveal reveal-delay-1" style="margin-bottom:0">Pro features,<br>out in the wild</h2>
         </div>
         <div class="showcase-mode-toggle reveal reveal-delay-2" role="group" aria-label="Screenshot appearance">
-            <button class="mode-btn" data-mode="dark">Dark</button>
-            <button class="mode-btn active" data-mode="light">Light</button>
+            <button class="mode-btn active" data-mode="dark">Dark</button>
+            <button class="mode-btn" data-mode="light">Light</button>
         </div>
     </div>
     <div class="carousel-wrapper">
@@ -283,46 +255,46 @@
 <section class="pricing" id="pricing"><div class="container">
     <div class="pricing-header">
         <div class="section-eyebrow reveal">Simple pricing</div>
-        <h2 class="section-title reveal reveal-delay-1">Start free.<br>Upgrade when<br>you&rsquo;re hooked.</h2>
+        <h2 class="section-title reveal reveal-delay-1">Start free.<br>Upgrade when you&rsquo;re hooked.</h2>
     </div>
     <div class="pricing-grid reveal">
-        <div class="pricing-card free-tier">
+        <div class="pricing-card">
             <div class="pricing-tier">Free</div>
+            <div class="pricing-subtitle">For everyone</div>
             <div class="pricing-price">&pound;0</div>
             <div class="pricing-period">forever</div>
-            <div class="pricing-divider"></div>
-            <ul class="pricing-features"><li>Full 214-fell checklist</li><li>Progress ring + book grouping</li><li>Interactive map with all fells</li><li>Manual completion logging</li><li>Nearby fell suggestions</li></ul>
+            <ul class="pricing-features"><li>Full 214-fell checklist</li><li>Progress ring and book grouping</li><li>Interactive map with all fells</li><li>Manual completion logging</li><li>Nearby fell suggestions</li></ul>
         </div>
         <div class="pricing-card featured">
             <div class="pricing-badge">Most Popular</div>
             <div class="pricing-tier">Companion+</div>
+            <div class="pricing-subtitle">For keen baggers</div>
             <div class="pricing-price">&pound;12.99</div>
-            <div class="pricing-period">one-off purchase</div>
-            <div class="pricing-divider"></div>
+            <div class="pricing-period">one-off</div>
             <ul class="pricing-features"><li>Everything in Free</li><li>Milestone achievements</li><li>Advanced stats dashboard</li><li>Regional weather forecasts</li><li>Friendly social feed</li><li>Shareable completion cards</li></ul>
         </div>
-        <div class="pricing-card pro-tier">
-            <div class="pricing-badge badge-pro">Fully Loaded</div>
+        <div class="pricing-card">
             <div class="pricing-tier">Companion Pro</div>
+            <div class="pricing-subtitle">For serious fellwalkers</div>
             <div class="pricing-price">&pound;17.99</div>
             <div class="pricing-period">per year</div>
-            <div class="pricing-divider"></div>
             <ul class="pricing-features"><li>Everything in Companion+</li><li>Summit-specific weather</li><li>GPS route navigation</li><li>Auto GPS-rerouting</li><li>Smart recommendations</li><li>Automatic summit detection</li></ul>
         </div>
     </div>
 </div></section>
 
-<section class="cta-section" id="download"><div class="cta-content">
-    <h2 class="cta-title reveal">The fells<br>are <em>waiting</em></h2>
+<section class="cta-section" id="download"><div class="container"><div class="cta-content">
+    <div class="cta-rule"></div>
+    <h2 class="cta-title reveal">The fells are waiting</h2>
     <p class="cta-subtitle reveal reveal-delay-1">Less than 30p a week for summit weather forecasts, GPS navigation, and an intelligent companion that makes every walk better.</p>
-    <div class="reveal reveal-delay-2"><a href="#" class="btn-primary" style="display:inline-flex;font-size:17px;padding:16px 40px">Download on the App Store</a></div>
-</div></section>
+    <div class="reveal reveal-delay-2"><a href="#" class="btn-primary" style="font-size:16px;padding:16px 40px;display:inline-flex">Download on the App Store</a></div>
+</div></div></section>
 
 <footer class="footer"><div class="container"><div class="footer-inner">
-    <div class="footer-brand">The Wainwright Companion</div>
+    <div class="footer-brand"><picture><source srcset="images/Wainwright%20Companion%20Logo%20in%20Morning%20Light.webp" type="image/webp"><img src="images/Wainwright%20Companion%20Logo%20in%20Morning%20Light.png" alt="Wainwright Companion"></picture></div>
     <div class="footer-links">
         <a href="/privacy/">Privacy Policy</a>
-        <a href="/terms/">Terms</a>
+        <a href="/terms/">Terms of Service</a>
         <a href="mailto:support&#64;wainwrightcompanion.co.uk">Support</a>
     </div>
 </div></div></footer>
@@ -363,8 +335,6 @@
     var imgs=document.querySelectorAll('.showcase-img');
     btns.forEach(function(btn){btn.addEventListener('click',function(){var mode=this.dataset.mode;if(this.classList.contains('active'))return;btns.forEach(function(b){b.classList.toggle('active',b.dataset.mode===mode)});imgs.forEach(function(img){img.style.opacity='0';setTimeout(function(){img.srcset=img.dataset[mode+'Srcset'];img.src=img.dataset[mode+'Src'];img.style.opacity='';},220);});});});
 })();
-// Default carousel to light mode (airy theme)
-document.querySelectorAll('.showcase-img').forEach(function(img){if(img.dataset.lightSrc){img.src=img.dataset.lightSrc;img.srcset=img.dataset.lightSrcset||'';}});
 var t=setTimeout(function(){document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('visible')})},500);
 if('IntersectionObserver' in window){var o=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');o.unobserve(e.target)}})},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});document.querySelectorAll('.reveal').forEach(function(e){o.observe(e)});}else{document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('visible')})}
 setTimeout(function(){document.querySelectorAll('.hero .reveal,.stats-bar .reveal').forEach(function(e){e.classList.add('visible')})},100);
