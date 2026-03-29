@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms of Service — The Wainwright Companion</title>
-    <meta name="description" content="Terms of service for The Wainwright Companion iOS app.">
+    <title>Support — The Wainwright Companion</title>
+    <meta name="description" content="Support and help for The Wainwright Companion iOS app.">
     <meta name="theme-color" content="#f6f2e8">
     <link rel="icon" type="image/x-icon" href="../favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
@@ -59,11 +59,11 @@
         .page-eyebrow{display:inline-block;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:1px;color:var(--os-blue);background:rgba(26,92,138,.08);border:1px solid rgba(26,92,138,.2);padding:4px 12px;margin-bottom:20px}
         .page-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:clamp(40px,6vw,72px);text-transform:uppercase;line-height:.9;letter-spacing:-.5px;color:var(--text);margin-bottom:16px}
         .page-title em{font-style:normal;color:var(--os-red)}
-        .page-date{font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:32px}
         .page-rule{height:3px;background:var(--os-red);width:48px;margin-bottom:40px}
+        .page-intro{font-size:17px;color:var(--muted);line-height:1.75;border-left:3px solid var(--rule);padding-left:20px}
 
         /* CONTENT */
-        .page-content{max-width:var(--content-width);margin:0 auto;padding:0 32px 120px}
+        .page-content{max-width:var(--content-width);margin:0 auto;padding:48px 32px 120px}
         .page-content h2{
             font-family:'Barlow Condensed',sans-serif;
             font-weight:700;
@@ -85,6 +85,29 @@
         .page-content a{color:var(--os-red)}
         .page-content a:hover{text-decoration:underline}
 
+        /* CONTACT CARD */
+        .contact-card{
+            margin-top:48px;
+            background:#fff;
+            border:1px solid var(--rule);
+            border-top:3px solid var(--os-red);
+            padding:36px 32px;
+            display:flex;
+            align-items:center;
+            gap:28px;
+        }
+        .contact-icon{
+            font-family:'Barlow Condensed',sans-serif;
+            font-weight:800;
+            font-size:32px;
+            color:var(--os-red);
+            flex-shrink:0;
+            line-height:1;
+        }
+        .contact-label{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+        .contact-email{font-family:'Space Mono',monospace;font-size:15px;color:var(--os-red)}
+        .contact-note{font-size:13px;color:var(--muted);margin-top:6px}
+
         /* FOOTER */
         .footer{padding:32px 0 24px;background:var(--text)}
         .footer-inner{max-width:var(--max-width);margin:0 auto;padding:0 32px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;margin-bottom:20px}
@@ -98,6 +121,7 @@
             .page-header,.page-content{padding-left:20px;padding-right:20px}
             .nav-inner{padding:0 20px}
             .nav-links{gap:20px}
+            .contact-card{flex-direction:column;gap:16px}
         }
     </style>
 </head>
@@ -112,59 +136,35 @@
 </div></nav>
 
 <header class="page-header">
-    <div class="page-eyebrow">Legal</div>
-    <h1 class="page-title">Terms of <em>Service</em></h1>
-    <p class="page-date">Last updated: 8 March 2026</p>
+    <div class="page-eyebrow">Help</div>
+    <h1 class="page-title">App <em>Support</em></h1>
     <div class="page-rule"></div>
+    <p class="page-intro">Questions about The Wainwright Companion? We're happy to help.</p>
 </header>
 
 <main class="page-content">
 
-    <h2>1. About the App</h2>
-    <p>The Wainwright Companion is a mobile application for tracking completion of the 214 Wainwright fells in the English Lake District. These terms govern your use of the app and its features.</p>
-
-    <h2>2. Acceptable Use</h2>
-    <p>You agree to use the app and its social features responsibly. You must not:</p>
+    <h2>Common Questions</h2>
     <ul>
-        <li>Share offensive, abusive, or illegal content through social features</li>
-        <li>Impersonate other users or misrepresent your identity</li>
-        <li>Attempt to interfere with the app&rsquo;s services or other users&rsquo; data</li>
-        <li>Use the app for any purpose other than its intended fell-walking and tracking functionality</li>
+        <li>Your completion data is stored on your device and synced automatically via iCloud — make sure you're signed in to the same Apple ID on all your devices</li>
+        <li>GPS navigation and weather features require a Companion Pro subscription</li>
+        <li>To restore a previous purchase, go to Settings → Subscription → Restore Purchases</li>
+        <li>To delete your account and all data, go to Settings → Delete Account</li>
+        <li>Routes are pre-loaded and work offline — no signal needed once the app is installed</li>
+        <li>Weather forecasts require an internet connection; the last fetched forecast is shown when offline</li>
     </ul>
 
-    <h2>3. Safety &amp; Liability</h2>
-    <p><strong>Weather and navigation data are provided for informational purposes only.</strong> They should not be relied upon as your sole source of safety information when walking in the fells.</p>
-    <p>You are responsible for your own safety on the hills. Always:</p>
-    <ul>
-        <li>Check multiple weather sources before setting out</li>
-        <li>Carry appropriate equipment, maps, and navigation tools</li>
-        <li>Tell someone your route and expected return time</li>
-        <li>Turn back if conditions deteriorate</li>
-    </ul>
-    <p>The app is provided &ldquo;as is&rdquo; without warranty of any kind. We are not liable for any loss, injury, or damage arising from use of the app, its navigation features, or its weather data.</p>
+    <h2>Get in Touch</h2>
+    <p>If you can't find what you're looking for, email us and we'll get back to you as soon as possible.</p>
 
-    <h2>4. User Content</h2>
-    <p>You retain ownership of all content you create in the app, including notes, photos, and completion records.</p>
-    <p>By sharing completions publicly through the app&rsquo;s social features, you grant a limited, non-exclusive licence to display that content within the app to other users. You can revoke this by unsharing individual completions or disabling social sharing in Settings.</p>
-
-    <h2>5. iCloud &amp; Data</h2>
-    <p>The app uses Apple iCloud (CloudKit) to sync your data across devices and to power social features. Your use of iCloud is subject to Apple&rsquo;s own terms of service.</p>
-    <p>We are not responsible for data loss due to iCloud service interruptions or account issues. We recommend keeping your iCloud account in good standing.</p>
-
-    <h2>6. Account Deletion</h2>
-    <p>You can delete your account and all associated data at any time using the <strong>Delete Account</strong> option in Settings. This action is permanent and removes your data from both your device and iCloud.</p>
-
-    <h2>7. Termination</h2>
-    <p>We reserve the right to remove accounts or content that violate these terms, or to suspend access to social features for users who misuse them.</p>
-
-    <h2>8. Changes to These Terms</h2>
-    <p>We may update these terms from time to time. Changes will be reflected on this page with an updated date. Continued use of the app after changes constitutes acceptance of the updated terms.</p>
-
-    <h2>9. Governing Law</h2>
-    <p>These terms are governed by the laws of England and Wales.</p>
-
-    <h2>10. Contact</h2>
-    <p>If you have questions about these terms, please contact us at <a href="mailto:support&#64;wainwrightcompanion.co.uk">support&#64;wainwrightcompanion.co.uk</a>.</p>
+    <div class="contact-card">
+        <div class="contact-icon">✉</div>
+        <div>
+            <div class="contact-label">Email Support</div>
+            <a class="contact-email" href="mailto:support&#64;wainwrightcompanion.co.uk">support&#64;wainwrightcompanion.co.uk</a>
+            <p class="contact-note">We aim to respond within 2 working days.</p>
+        </div>
+    </div>
 
 </main>
 

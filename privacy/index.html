@@ -5,66 +5,122 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy — The Wainwright Companion</title>
     <meta name="description" content="Privacy policy for The Wainwright Companion iOS app.">
-    <meta name="theme-color" content="#0a0f14">
+    <meta name="theme-color" content="#f6f2e8">
     <link rel="icon" type="image/x-icon" href="../favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300..600&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Space+Mono&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Space+Mono&display=swap"></noscript>
     <style>
-        :root{--color-bg:#0a0f14;--color-bg-raised:#111920;--color-border:rgba(255,255,255,.07);--color-text:#e8ecf0;--color-text-secondary:rgba(255,255,255,.55);--color-text-tertiary:rgba(255,255,255,.3);--color-accent:#4ade80;--color-brand:#b85c3a;--font-display:'DM Serif Display',Georgia,serif;--font-body:'DM Sans',-apple-system,sans-serif;--space-sm:16px;--space-md:24px;--space-lg:48px;--space-xl:80px;--max-width:720px}
+        :root{
+            --bg:#f6f2e8;
+            --bg-alt:#ede8d6;
+            --text:#1c1c1c;
+            --muted:#5a5050;
+            --os-red:#c0332b;
+            --os-blue:#1a5c8a;
+            --os-green:#3a6e3a;
+            --os-yellow:#f0c060;
+            --grid:rgba(26,92,138,.07);
+            --rule:rgba(28,28,28,.18);
+            --max-width:1080px;
+            --content-width:720px;
+        }
         *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
         html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
-        body{background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);font-size:16px;line-height:1.7;overflow-x:hidden}
+        body{
+            background-color:var(--bg);
+            background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+            background-size:60px 60px;
+            color:var(--text);
+            font-family:'Source Serif 4',Georgia,serif;
+            font-size:16px;
+            line-height:1.75;
+            overflow-x:hidden;
+        }
         img{max-width:100%;height:auto;display:block}
-        a{color:var(--color-accent);text-decoration:none;transition:opacity .2s}
-        a:hover{opacity:.8}
-        .nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:var(--space-sm) 0;background:rgba(10,15,20,.7);backdrop-filter:blur(20px) saturate(1.5);-webkit-backdrop-filter:blur(20px) saturate(1.5);border-bottom:1px solid var(--color-border)}
-        .nav-inner{max-width:1080px;margin:0 auto;padding:0 var(--space-md);display:flex;align-items:center;justify-content:space-between}
-        .nav-brand{display:flex;align-items:center}
-        .nav-brand img{height:44px;width:auto}
-        .nav-links{display:flex;gap:var(--space-md);align-items:center}
-        .nav-links a{font-size:14px;color:var(--color-text-secondary);font-weight:400;transition:color .2s}
-        .nav-links a:hover{color:var(--color-text);opacity:1}
-        .page-content{max-width:var(--max-width);margin:0 auto;padding:140px var(--space-md) var(--space-xl)}
-        .page-eyebrow{font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--color-accent);margin-bottom:var(--space-sm)}
-        .page-title{font-family:var(--font-display);font-size:clamp(28px,4vw,40px);line-height:1.15;letter-spacing:-.5px;margin-bottom:8px}
-        .page-date{font-size:14px;color:var(--color-text-tertiary);margin-bottom:var(--space-sm)}
-        .page-intro{font-size:17px;color:var(--color-text-secondary);line-height:1.7;margin-bottom:var(--space-lg)}
-        .page-content h2{font-family:var(--font-display);font-size:22px;letter-spacing:-.2px;margin-top:var(--space-lg);margin-bottom:var(--space-sm);color:var(--color-text)}
-        .page-content p{color:var(--color-text-secondary);margin-bottom:var(--space-sm)}
-        .page-content ul{color:var(--color-text-secondary);margin-bottom:var(--space-sm);padding-left:20px}
-        .page-content li{margin-bottom:6px}
-        .page-content strong{color:var(--color-text);font-weight:600}
-        .footer{padding:var(--space-lg) 0;border-top:1px solid var(--color-border)}
-        .footer-inner{max-width:1080px;margin:0 auto;padding:0 var(--space-md);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:var(--space-sm)}
-        .footer-brand img{height:36px;width:auto;opacity:.6}
-        .footer-links{display:flex;gap:var(--space-md)}
-        .footer-links a{font-size:13px;color:var(--color-text-tertiary)}
-        .footer-links a:hover{color:var(--color-text-secondary)}
-        @media(max-width:900px){
-            .nav-brand img{height:36px}
+        a{color:var(--os-red);text-decoration:none}
+        a:hover{text-decoration:underline}
+
+        /* NAV */
+        .nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--text);border-bottom:3px solid var(--os-red)}
+        .nav-inner{max-width:var(--max-width);margin:0 auto;padding:0 32px;height:56px;display:flex;align-items:center;justify-content:space-between}
+        .nav-brand{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:18px;letter-spacing:2px;text-transform:uppercase;color:#fff;text-decoration:none}
+        .nav-brand em{font-style:normal;color:var(--os-yellow)}
+        .nav-links{display:flex;gap:32px;align-items:center}
+        .nav-links a{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.6);text-decoration:none}
+        .nav-links a:hover{color:#fff;text-decoration:none}
+
+        /* PAGE HEADER */
+        .page-header{padding:120px 32px 56px;max-width:var(--content-width);margin:0 auto}
+        .page-eyebrow{display:inline-block;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:1px;color:var(--os-blue);background:rgba(26,92,138,.08);border:1px solid rgba(26,92,138,.2);padding:4px 12px;margin-bottom:20px}
+        .page-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:clamp(40px,6vw,72px);text-transform:uppercase;line-height:.9;letter-spacing:-.5px;color:var(--text);margin-bottom:16px}
+        .page-title em{font-style:normal;color:var(--os-red)}
+        .page-date{font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:32px}
+        .page-rule{height:3px;background:var(--os-red);width:48px;margin-bottom:40px}
+        .page-intro{font-size:17px;color:var(--muted);line-height:1.75;border-left:3px solid var(--rule);padding-left:20px}
+
+        /* CONTENT */
+        .page-content{max-width:var(--content-width);margin:0 auto;padding:48px 32px 120px}
+        .page-content h2{
+            font-family:'Barlow Condensed',sans-serif;
+            font-weight:700;
+            font-size:20px;
+            letter-spacing:1px;
+            text-transform:uppercase;
+            color:var(--text);
+            margin-top:48px;
+            margin-bottom:14px;
+            padding-bottom:8px;
+            border-bottom:1px solid var(--rule);
+        }
+        .page-content p{color:var(--muted);margin-bottom:16px;font-size:15px}
+        .page-content ul{color:var(--muted);margin-bottom:16px;padding-left:0;list-style:none}
+        .page-content li{font-size:15px;padding:5px 0 5px 20px;position:relative;border-bottom:1px solid rgba(28,28,28,.06)}
+        .page-content li::before{content:'—';position:absolute;left:0;color:var(--os-red);font-size:12px}
+        .page-content li:last-child{border-bottom:none}
+        .page-content strong{color:var(--text);font-weight:600}
+        .page-content a{color:var(--os-red)}
+        .page-content a:hover{text-decoration:underline}
+
+        /* FOOTER */
+        .footer{padding:32px 0 24px;background:var(--text)}
+        .footer-inner{max-width:var(--max-width);margin:0 auto;padding:0 32px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;margin-bottom:20px}
+        .footer-brand{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:16px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.68)}
+        .footer-links{display:flex;gap:24px}
+        .footer-links a{font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.68);text-decoration:none}
+        .footer-links a:hover{color:#fff}
+        .footer-copy{max-width:var(--max-width);margin:0 auto;padding:20px 32px 0;font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:.5px;color:rgba(255,255,255,.3);border-top:1px solid rgba(255,255,255,.08)}
+
+        @media(max-width:640px){
+            .page-header,.page-content{padding-left:20px;padding-right:20px}
+            .nav-inner{padding:0 20px}
+            .nav-links{gap:20px}
         }
     </style>
 </head>
 <body>
 
 <nav class="nav"><div class="nav-inner">
-    <a href="/" class="nav-brand"><img src="/images/logo.png" alt="Wainwrights Companion"></a>
+    <a href="/" class="nav-brand">The Wainwright <em>Companion</em></a>
     <div class="nav-links">
         <a href="/">Home</a>
         <a href="/terms/">Terms</a>
     </div>
 </div></nav>
 
-<main class="page-content">
+<header class="page-header">
     <div class="page-eyebrow">Legal</div>
-    <h1 class="page-title">Privacy Policy</h1>
-    <p class="page-date"><strong>Last updated:</strong> 27 February 2026</p>
-
+    <h1 class="page-title">Privacy <em>Policy</em></h1>
+    <p class="page-date">Last updated: 27 February 2026</p>
+    <div class="page-rule"></div>
     <p class="page-intro">The Wainwright Companion is designed with your privacy in mind. We collect only the data necessary to help you track your Wainwright fell completions, navigate routes, and optionally share your progress with friends. We do not sell your data, use third-party analytics, or display advertising.</p>
+</header>
+
+<main class="page-content">
 
     <h2>1. Location Data</h2>
     <p>We collect precise location data (GPS coordinates and altitude) to provide core app features:</p>
@@ -140,16 +196,20 @@
 
     <h2>12. Contact</h2>
     <p>If you have questions about this privacy policy or your data, please contact us at <a href="mailto:support&#64;wainwrightcompanion.co.uk">support&#64;wainwrightcompanion.co.uk</a>.</p>
+
 </main>
 
-<footer class="footer"><div class="footer-inner">
-    <div class="footer-brand"><img src="/images/logo.png" alt="Wainwrights Companion"></div>
-    <div class="footer-links">
-        <a href="/privacy/">Privacy Policy</a>
-        <a href="/terms/">Terms of Service</a>
-        <a href="mailto:support&#64;wainwrightcompanion.co.uk">Support</a>
+<footer class="footer">
+    <div class="footer-inner">
+        <div class="footer-brand">The Wainwright Companion</div>
+        <div class="footer-links">
+            <a href="/privacy/">Privacy Policy</a>
+            <a href="/terms/">Terms</a>
+            <a href="/support/">Support</a>
+        </div>
     </div>
-</div></footer>
+    <div class="footer-copy">&copy; 2026 Paul Dickenson. All rights reserved.</div>
+</footer>
 
 </body>
 </html>

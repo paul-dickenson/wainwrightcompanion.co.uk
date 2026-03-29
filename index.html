@@ -153,12 +153,13 @@
         .cta-subtitle{font-size:17px;color:var(--muted);margin-bottom:48px;max-width:480px;margin-left:auto;margin-right:auto;line-height:1.75}
 
         /* FOOTER */
-        .footer{padding:32px 0;background:var(--text)}
-        .footer-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+        .footer{padding:32px 0 24px;background:var(--text)}
+        .footer-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;margin-bottom:20px}
         .footer-brand{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:16px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.68)}
         .footer-links{display:flex;gap:24px}
         .footer-links a{font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.68)}
         .footer-links a:hover{color:#fff;text-decoration:none}
+        .footer-copy{font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:.5px;color:rgba(255,255,255,.3);padding-top:20px;border-top:1px solid rgba(255,255,255,.08)}
 
         .reveal{opacity:0;transform:translateY(16px);transition:opacity .8s ease,transform .8s ease}
         .reveal.visible{opacity:1;transform:translateY(0)}
@@ -324,14 +325,17 @@
     <div class="reveal reveal-delay-2"><a href="#" class="btn-primary" style="display:inline-flex;font-size:17px;padding:16px 40px">Download on the App Store</a></div>
 </div></section>
 
-<footer class="footer"><div class="container"><div class="footer-inner">
-    <div class="footer-brand">The Wainwright Companion</div>
-    <div class="footer-links">
-        <a href="/privacy/">Privacy Policy</a>
-        <a href="/terms/">Terms</a>
-        <a href="mailto:support&#64;wainwrightcompanion.co.uk">Support</a>
+<footer class="footer"><div class="container">
+    <div class="footer-inner">
+        <div class="footer-brand">The Wainwright Companion</div>
+        <div class="footer-links">
+            <a href="/privacy/">Privacy Policy</a>
+            <a href="/terms/">Terms</a>
+            <a href="/support/">Support</a>
+        </div>
     </div>
-</div></div></footer>
+    <div class="footer-copy">&copy; 2026 Paul Dickenson. All rights reserved.</div>
+</div></footer>
 
 <script>
 (function(){
