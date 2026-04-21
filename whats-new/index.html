@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What's New — The Wainwright Companion</title>
+    <meta name="description" content="See what's new in The Wainwright Companion — release notes and new features for every version.">
+    <meta name="theme-color" content="#f6f2e8">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Space+Mono&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Space+Mono&display=swap"></noscript>
+    <style>
+        :root{
+            --bg:#f6f2e8;
+            --bg-alt:#ede8d6;
+            --text:#1c1c1c;
+            --muted:#5a5050;
+            --os-red:#c0332b;
+            --os-blue:#1a5c8a;
+            --os-green:#3a6e3a;
+            --os-yellow:#f0c060;
+            --grid:rgba(26,92,138,.07);
+            --rule:rgba(28,28,28,.18);
+            --max-width:1080px;
+            --content-width:720px;
+            --tier-free:#3a6e3a;
+            --tier-companion:#6b3fa0;
+            --tier-pro:#1a5c8a;
+        }
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+        html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+        body{
+            background-color:var(--bg);
+            background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+            background-size:60px 60px;
+            color:var(--text);
+            font-family:'Source Serif 4',Georgia,serif;
+            font-size:16px;
+            line-height:1.75;
+            overflow-x:hidden;
+        }
+        img{max-width:100%;height:auto;display:block}
+        a{color:var(--os-red);text-decoration:none}
+        a:hover{text-decoration:underline}
+
+        /* NAV */
+        .nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--text);border-bottom:3px solid var(--os-red)}
+        .nav-inner{max-width:var(--max-width);margin:0 auto;padding:0 32px;height:56px;display:flex;align-items:center;justify-content:space-between}
+        .nav-brand{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:18px;letter-spacing:2px;text-transform:uppercase;color:#fff;text-decoration:none}
+        .nav-brand em{font-style:normal;color:var(--os-yellow)}
+        .nav-links{display:flex;gap:32px;align-items:center}
+        .nav-links a{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.6);text-decoration:none}
+        .nav-links a:hover{color:#fff;text-decoration:none}
+        .nav-links a.active{color:#fff}
+
+        /* PAGE HEADER */
+        .page-header{padding:120px 32px 56px;max-width:var(--content-width);margin:0 auto}
+        .page-eyebrow{display:inline-block;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:1px;color:var(--os-blue);background:rgba(26,92,138,.08);border:1px solid rgba(26,92,138,.2);padding:4px 12px;margin-bottom:20px}
+        .page-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:clamp(40px,6vw,72px);text-transform:uppercase;line-height:.9;letter-spacing:-.5px;color:var(--text);margin-bottom:16px}
+        .page-title em{font-style:normal;color:var(--os-red)}
+        .page-rule{height:3px;background:var(--os-red);width:48px;margin-bottom:40px}
+        .page-intro{font-size:17px;color:var(--muted);line-height:1.75;border-left:3px solid var(--rule);padding-left:20px}
+
+        /* CONTENT */
+        .page-content{max-width:var(--content-width);margin:0 auto;padding:48px 32px 120px}
+
+        /* RELEASE BLOCK */
+        .release{margin-bottom:72px}
+        .release-header{display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:6px}
+        .release-version{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:clamp(28px,4vw,48px);text-transform:uppercase;line-height:1;letter-spacing:-.5px;color:var(--text)}
+        .release-version em{font-style:normal;color:var(--os-red)}
+        .release-badge{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:1px;color:var(--os-green);background:rgba(58,110,58,.1);border:1px solid rgba(58,110,58,.25);padding:3px 10px;vertical-align:middle}
+        .release-date{font-family:'Barlow Condensed',sans-serif;font-size:14px;letter-spacing:1px;text-transform:uppercase;color:var(--muted)}
+        .release-rule{height:2px;background:var(--rule);margin:12px 0 24px}
+        .release-intro{font-size:16px;color:var(--muted);margin-bottom:32px;line-height:1.7}
+
+        /* TIER SECTION */
+        .tier-section{margin-bottom:32px}
+        .tier-label{display:inline-flex;align-items:center;gap:6px;font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:3px 10px;margin-bottom:16px;border-radius:2px}
+        .tier-label.free{color:var(--tier-free);background:rgba(58,110,58,.1);border:1px solid rgba(58,110,58,.25)}
+        .tier-label.companion{color:var(--tier-companion);background:rgba(107,63,160,.1);border:1px solid rgba(107,63,160,.25)}
+        .tier-label.pro{color:var(--tier-pro);background:rgba(26,92,138,.1);border:1px solid rgba(26,92,138,.2)}
+
+        /* FEATURE */
+        .feature{padding:16px 0;border-bottom:1px solid rgba(28,28,28,.08)}
+        .feature:last-child{border-bottom:none}
+        .feature-headline{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:20px;letter-spacing:.3px;color:var(--text);margin-bottom:4px}
+        .feature-desc{font-size:15px;color:var(--muted);line-height:1.65}
+        .feature-find{font-size:13px;color:var(--muted);opacity:.75;margin-top:4px;font-style:italic}
+
+        /* FOOTER */
+        .footer{padding:32px 0 24px;background:var(--text)}
+        .footer-inner{max-width:var(--max-width);margin:0 auto;padding:0 32px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;margin-bottom:20px}
+        .footer-brand{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:16px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.68)}
+        .footer-links{display:flex;gap:24px}
+        .footer-links a{font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.68);text-decoration:none}
+        .footer-links a:hover{color:#fff}
+        .footer-copy{max-width:var(--max-width);margin:0 auto;padding:20px 32px 0;font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:.5px;color:rgba(255,255,255,.3);border-top:1px solid rgba(255,255,255,.08)}
+
+        @media(max-width:640px){
+            .page-header,.page-content{padding-left:20px;padding-right:20px}
+            .nav-inner{padding:0 20px}
+            .nav-links{gap:20px}
+            .release-header{flex-direction:column;gap:4px}
+        }
+    </style>
+</head>
+<body>
+
+<nav class="nav"><div class="nav-inner">
+    <a href="/" class="nav-brand">The Wainwright <em>Companion</em></a>
+    <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/whats-new/" class="active">What's New</a>
+        <a href="/support/">Support</a>
+    </div>
+</div></nav>
+
+<header class="page-header">
+    <div class="page-eyebrow">Release Notes</div>
+    <h1 class="page-title">What's <em>New</em></h1>
+    <div class="page-rule"></div>
+    <p class="page-intro">Every update to The Wainwright Companion is designed to help you get more out of your time on the fells. Features are grouped by plan — everything marked <strong>For Everyone</strong> is free.</p>
+</header>
+
+<main class="page-content">
+
+    <!-- ─────────────────────────────────────────── v1.2 ── -->
+    <section class="release">
+
+        <div class="release-header">
+            <div>
+                <span class="release-version">Version&nbsp;<em>1.2</em></span>
+                <span class="release-badge">Current</span>
+            </div>
+            <span class="release-date">April 2026</span>
+        </div>
+        <div class="release-rule"></div>
+        <p class="release-intro">Version 1.2 focuses on navigation reliability and making routes a social thing. Walks that get interrupted can now be resumed, planned routes can be shared with fellow baggers, and the social feed has been redesigned to make it easier to follow what your friends are up to.</p>
+
+        <div class="tier-section">
+            <div class="tier-label free">For Everyone</div>
+
+            <div class="feature">
+                <div class="feature-headline">Difficulty on the map</div>
+                <div class="feature-desc">When you zoom out to see the region clusters, each bubble now shows how many fells match your current difficulty filter — not just the total. A quick way to see which areas of the Lakes suit the kind of day you have in mind.</div>
+                <div class="feature-find">Find it: Map tab → zoom out → apply a difficulty filter.</div>
+            </div>
+        </div>
+
+        <div class="tier-section">
+            <div class="tier-label companion">Companion+</div>
+
+            <div class="feature">
+                <div class="feature-headline">Share your routes</div>
+                <div class="feature-desc">Any route you've planned can now be posted to the social feed. Anyone following you can save it directly to their own route library and navigate it from there — no need to recreate the plan from scratch.</div>
+                <div class="feature-find">Find it: Route Planner → open a saved route → tap the share icon → Share to Social Feed.</div>
+            </div>
+
+            <div class="feature">
+                <div class="feature-headline">New share card templates</div>
+                <div class="feature-desc">Three polished share card formats are now available: a stats card with your walk summary, a route map card with your actual GPS overlay, and a summit card for individual fell completions. All rendered at 3× scale for sharp social posts.</div>
+                <div class="feature-find">Find it: Walk Summary → share icon, or Fell Detail → ⋯ menu → Share.</div>
+            </div>
+
+            <div class="feature">
+                <div class="feature-headline">Refreshed social feed</div>
+                <div class="feature-desc">The activity feed has a cleaner layout — a consolidated profile card, clearer fell names in activity headers, and community stats (total distance covered, most popular fells) visible inline without having to scroll to find them.</div>
+                <div class="feature-find">Find it: Social tab.</div>
+            </div>
+        </div>
+
+        <div class="tier-section">
+            <div class="tier-label pro">Companion Pro</div>
+
+            <div class="feature">
+                <div class="feature-headline">Hike resume</div>
+                <div class="feature-desc">If your phone runs out of battery, the app is force-closed, or iOS terminates it mid-walk, your GPS track, timing, route position, and any summits already bagged are saved automatically. Open the app when you're ready and pick up exactly where you left off — a green banner on the Checklist tab will be waiting for you.</div>
+                <div class="feature-find">Find it: Happens automatically during active navigation. Resume from the Checklist tab banner.</div>
+            </div>
+
+            <div class="feature">
+                <div class="feature-headline">Drag waypoints</div>
+                <div class="feature-desc">Long-press any waypoint pin in the route planner to pick it up and drag it to a new position on the map. The route recalculates immediately when you release. No need to delete and re-add a stop to fine-tune a detour.</div>
+                <div class="feature-find">Find it: Route Planner → long-press a waypoint pin → drag to reposition.</div>
+            </div>
+
+            <div class="feature">
+                <div class="feature-headline">Summit alerts while pocketed</div>
+                <div class="feature-desc">The app now fires a summit detection notification even when running in the background, so you can keep your phone in your jacket pocket during the approach. A notification appears when you're within range — tap it to log the completion on the spot.</div>
+                <div class="feature-find">Find it: Requires notification permission. Works automatically during active navigation.</div>
+            </div>
+
+            <div class="feature">
+                <div class="feature-headline">Elevation chart after rerouting</div>
+                <div class="feature-desc">If you take a different path mid-walk — a detour, a shortcut, or an unplanned scramble — the elevation chart now re-anchors to your current position rather than showing a flat line for the section you diverged from.</div>
+                <div class="feature-find">Find it: Active Navigation → elevation strip at the bottom of the screen.</div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- ─────────────────────────────────────────── v1.1 ── -->
+    <section class="release">
+
+        <div class="release-header">
+            <div>
+                <span class="release-version">Version&nbsp;<em>1.1</em></span>
+            </div>
+            <span class="release-date">March 2026</span>
+        </div>
+        <div class="release-rule"></div>
+        <p class="release-intro">The first major update after launch. Version 1.1 added 200 walking routes across all 214 fells, a full subscription tier system (Companion+ and Companion Pro), weather-ranked suggestions for planning days out, and HealthKit integration for walkers who track their fitness.</p>
+
+        <div class="tier-section">
+            <div class="tier-label free">For Everyone</div>
+
+            <div class="feature">
+                <div class="feature-headline">All 214 fells, 200 routes</div>
+                <div class="feature-desc">Every Wainwright now has at least one walking route: a map, an elevation profile, a difficulty rating, and a Naismith-estimated time. Popular fells like Helvellyn and Scafell Pike have multiple options including circular walks and ridge routes.</div>
+                <div class="feature-find">Find it: Any Fell Detail view → Routes section.</div>
+            </div>
+
+            <div class="feature">
+                <div class="feature-headline">Bagging made simple</div>
+                <div class="feature-desc">Log a completion with a date, star rating, personal notes, up to five photos, the weather you experienced, and the names of people you walked with. The app supports repeat ascents, so every time you bag a fell counts.</div>
+                <div class="feature-find">Find it: Fell Detail → Mark as Completed, or during active navigation when summit detection fires.</div>
+            </div>
+
+            <div class="feature">
+                <div class="feature-headline">Your progress, at a glance</div>
+                <div class="feature-desc">The Stats tab shows your overall progress ring, total distance and ascent across all tracked walks, your current weekly streak, and a breakdown of completion progress across all seven Wainwright books.</div>
+                <div class="feature-find">Find it: Profile tab → Stats section.</div>
+            </div>
+        </div>
+
+        <div class="tier-section">
+            <div class="tier-label companion">Companion+</div>
+
+            <div class="feature">
+                <div class="feature-headline">Plan Ahead</div>
+                <div class="feature-desc">The Suggestions tab now shows a six-day view of your options, ranked by weather forecast for each day. The best walking day is highlighted automatically — clear sky, reasonable wind, good visibility at summit level. Useful for planning a trip rather than just deciding on the morning.</div>
+                <div class="feature-find">Find it: Suggestions tab → Plan Ahead.</div>
+            </div>
+
+            <div class="feature">
+                <div class="feature-headline">Weather safety ratings</div>
+                <div class="feature-desc">Every fell forecast now carries a Green, Amber, or Red safety rating. Temperature and wind speed are corrected for the fell's actual altitude — what the weather station reads at valley level is rarely what you'll experience on the summit of Scafell Pike in winter.</div>
+                <div class="feature-find">Find it: Fell Detail → tap the weather badge to expand.</div>
+            </div>
+
+            <div class="feature">
+                <div class="feature-headline">54 achievements</div>
+                <div class="feature-desc">Milestones for first completions, full books, total distance and ascent records, weekly streaks, and more. A toast notification appears when you earn one, and your full achievement collection is visible in the Stats tab.</div>
+                <div class="feature-find">Find it: Profile tab → Achievements section.</div>
+            </div>
+        </div>
+
+        <div class="tier-section">
+            <div class="tier-label pro">Companion Pro</div>
+
+            <div class="feature">
+                <div class="feature-headline">GPS navigation</div>
+                <div class="feature-desc">Follow any route turn-by-turn with a live breadcrumb trail and three-level off-route alerts (amber at 50m, red at 100m, critical at 200m). Summit detection prompts you to log a completion when you reach the top. Every tracked walk is automatically saved as a Hiking workout in the Health app.</div>
+                <div class="feature-find">Find it: Any Route Preview → Start Navigation.</div>
+            </div>
+
+            <div class="feature">
+                <div class="feature-headline">Route planner</div>
+                <div class="feature-desc">Build custom multi-fell walks from scratch. Choose up to eight summits, pick a start point from 116 car parks (with fee information), and the app generates a hiking-optimised route using BRouter. Circular, out-and-back, and point-to-point all supported.</div>
+                <div class="feature-find">Find it: Map tab → Route Planner button.</div>
+            </div>
+
+            <div class="feature">
+                <div class="feature-headline">Walk summary</div>
+                <div class="feature-desc">After every tracked walk, a full summary shows your total distance, ascent, time, moving pace, and maximum altitude reached. A map overlay compares your actual GPS track to the planned route so you can see exactly where you diverged.</div>
+                <div class="feature-find">Find it: Appears automatically at the end of active navigation, or tap any walk in Walk History.</div>
+            </div>
+        </div>
+
+    </section>
+
+</main>
+
+<footer class="footer">
+    <div class="footer-inner">
+        <div class="footer-brand">The Wainwright Companion</div>
+        <div class="footer-links">
+            <a href="/privacy/">Privacy Policy</a>
+            <a href="/terms/">Terms</a>
+            <a href="/support/">Support</a>
+        </div>
+    </div>
+    <div class="footer-copy">&copy; 2026 Paul Dickenson. All rights reserved.</div>
+</footer>
+
+</body>
+</html>
